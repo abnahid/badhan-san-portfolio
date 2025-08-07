@@ -90,7 +90,6 @@ const Navbar: React.FC = () => {
                 priority
               />
             </Link>
-            {/* "Let's Talk" Link */}
             <Link
               href="/contact"
               className="flex items-center flex-wrap py-[6px] px-3 text-[15px] font-bold text-active leading-none mr-2 transition-all duration-300 hover:text-orange md:hover:text-white group"
