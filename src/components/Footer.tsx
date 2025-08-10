@@ -114,7 +114,7 @@ const Footer: React.FC = () => {
             {/* Middle Card */}
             <div className="py-9 px-7 border border-border-white rounded-2xl flex flex-col justify-between group bg-black-700/50 backdrop-blur-md">
               <h3 className="text-xl font-bold font-Syne text-white mb-6">
-                Looking for a hectic designer?
+                Looking for a Video Editor and Motion Graphics Artist ?
               </h3>
               <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
                 <p className="text-2xl font-bold font-Syne leading-none text-orange break-all">

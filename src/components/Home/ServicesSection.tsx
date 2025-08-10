@@ -46,7 +46,7 @@ export default function ServicesSection() {
                     className="flex flex-wrap items-end justify-between font-bold text-xl font-Syne text-black-800 group-hover:text-orange transition-all"
                   >
                     Mobile Apps <br /> design
-                    <span className="text-black-text-600 group-hover:text-orange group-hover:animate-arrow-move-up">
+                    <span className="text-black-text-600 group-hover:text-orange group-hover:animate-move-up">
                       <ArrowUpRight />
                     </span>
                   </a>
@@ -71,7 +71,7 @@ export default function ServicesSection() {
                     className="flex flex-wrap items-end justify-between font-bold text-xl font-Syne text-black-800 group-hover:text-orange transition-all"
                   >
                     UI/UX <br /> design
-                    <span className="text-black-text-600 group-hover:text-orange group-hover:animate-arrow-move-up">
+                    <span className="text-black-text-600 group-hover:text-orange group-hover:animate-move-up">
                       <ArrowUpRight />
                     </span>
                   </a>
@@ -96,7 +96,7 @@ export default function ServicesSection() {
                     className="flex flex-wrap items-end justify-between font-bold text-xl font-Syne text-black-800 group-hover:text-orange transition-all"
                   >
                     Website <br /> design
-                    <span className="text-black-text-600 group-hover:text-orange group-hover:animate-arrow-move-up">
+                    <span className="text-black-text-600 group-hover:text-orange group-hover:animate-move-up">
                       <ArrowUpRight />
                     </span>
                   </a>
@@ -121,7 +121,7 @@ export default function ServicesSection() {
                     className="flex flex-wrap items-end justify-between font-bold text-xl font-Syne text-black-800 group-hover:text-orange transition-all"
                   >
                     Webflow <br /> development
-                    <span className="text-black-text-600 group-hover:text-orange group-hover:animate-arrow-move-up">
+                    <span className="text-black-text-600 group-hover:text-orange group-hover:animate-move-up">
                       <ArrowUpRight />
                     </span>
                   </a>
@@ -146,7 +146,7 @@ export default function ServicesSection() {
                     className="flex flex-wrap items-end justify-between font-bold text-xl font-Syne text-black-800 group-hover:text-orange transition-all"
                   >
                     Brand <br /> identity
-                    <span className="text-black-text-600 group-hover:text-orange group-hover:animate-arrow-move-up">
+                    <span className="text-black-text-600 group-hover:text-orange group-hover:animate-move-up">
                       <ArrowUpRight />
                     </span>
                   </a>
@@ -171,7 +171,7 @@ export default function ServicesSection() {
                     className="flex flex-wrap items-end justify-between font-bold text-xl font-Syne text-black-800 group-hover:text-orange transition-all"
                   >
                     Interaction <br /> design
-                    <span className="text-black-text-600 group-hover:text-orange group-hover:animate-arrow-move-up">
+                    <span className="text-black-text-600 group-hover:text-orange group-hover:animate-move-up">
                       <ArrowUpRight />
                     </span>
                   </a>
@@ -187,10 +187,7 @@ export default function ServicesSection() {
           >
             <div className="px-6 py-9 bg-black-800 rounded-lg flex flex-wrap flex-col justify-between max-w-[416px] mx-auto h-full group">
               <div className="flex flex-wrap justify-end relative">
-                <a
-                  href="/contact"
-                  className="group-hover:animate-arrow-move-up"
-                >
+                <a href="/contact" className="group-hover:animate-move-up">
                   <Image
                     src="/assets/SVG/orang-Top-ARrow.svg"
                     alt="Arrow"
@@ -206,7 +203,7 @@ export default function ServicesSection() {
                   SAY HELLO!
                 </span>
                 <h4 className="text-white text-2xl xl:text-[32px] font-bold font-Syne leading-none">
-                  hello@henry.com
+                  badhansencontact@gmail.com
                 </h4>
               </div>
             </div>
