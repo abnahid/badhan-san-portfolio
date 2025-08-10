@@ -139,109 +139,17 @@
   }
 }
 
-/* Keyframes */
-@keyframes moveUp {
-  0% {
-    opacity: 1;
-    transform: translateX(0px) translateY(0px) scale(1);
+@layer components {
+  .btn-primary {
+    @apply rounded-lg border border-black/95 bg-black/95 px-6 py-3 text-[15px] font-bold capitalize leading-none text-white transition-all duration-500 ease-in-out;
   }
-  25% {
-    opacity: 0;
-    transform: translateX(10px) translateY(-10px) scale(0.9);
+  .btn-primary:hover {
+    @apply border-black/40 bg-transparent text-black;
   }
-  26% {
-    opacity: 0;
-    transform: translateX(-10px) translateY(10px) scale(0.9);
+  .btn-primary-outline {
+    @apply rounded-lg border border-black/40 bg-transparent px-6 py-3 text-[15px] font-bold capitalize leading-none text-black transition-all duration-500 ease-in-out;
   }
-  55% {
-    opacity: 1;
-    transform: translateX(0px) translateY(0px) scale(1);
+  .btn-primary-outline:hover {
+    @apply border-black/95 bg-black/95 text-white;
   }
-}
-
-@keyframes fadeInLeft {
-  0% {
-    opacity: 0;
-    transform: translate3d(0, 0px, 10px);
-  }
-  100% {
-    opacity: 1;
-    transform: translate3d(0, 0px, 0px);
-  }
-}
-
-@keyframes fadeInDown {
-  0% {
-    opacity: 0;
-    transform: translate3d(0, -100px, 0);
-  }
-  100% {
-    opacity: 1;
-    transform: none;
-  }
-}
-
-@keyframes fadeInRight {
-  0% {
-    opacity: 0;
-    transform: translate3d(100px, 0, 0);
-  }
-  100% {
-    opacity: 1;
-    transform: none;
-  }
-}
-
-@keyframes animateSpin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-/* Animation utility classes (same as Tailwind's animation names) */
-.arrow-move-up {
-  animation: moveUp 0.8s linear;
-}
-
-.fadeInLeft1 {
-  animation: fadeInLeft 1.2s ease-in-out;
-}
-
-.fadeInLeft2 {
-  animation: fadeInLeft 1.4s ease-in-out;
-}
-
-.fadeInLeft3 {
-  animation: fadeInLeft 1.6s ease-in-out;
-}
-
-.fadeInLeft4 {
-  animation: fadeInLeft 1.8s ease-in-out;
-}
-
-.fadeInLeft5 {
-  animation: fadeInLeft 2s ease-in-out;
-}
-
-.fadeInLeft6 {
-  animation: fadeInLeft 2.3s ease-in-out;
-}
-
-.fadeInLeft7 {
-  animation: fadeInLeft 2.6s ease-in-out;
-}
-
-.fadeInRight {
-  animation: fadeInRight 1.8s ease-in-out;
-}
-
-.fadeInDown {
-  animation: fadeInDown 0.7s ease-in-out 0s normal none 1 running;
-}
-
-.spin {
-  animation: animateSpin 7s linear infinite;
 }

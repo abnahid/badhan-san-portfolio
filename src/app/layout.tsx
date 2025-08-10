@@ -1,7 +1,6 @@
-import Footer from "@/components/Footer";
-import Navbar from "@/components/Navbar";
 import { dmSans, syne } from "@/Font/font";
 import "./globals.css";
+import LayoutWrapper from "./LayoutWrapper";
 
 export default function RootLayout({
   children,
@@ -13,9 +12,9 @@ export default function RootLayout({
       <body
         className={`${dmSans.variable} ${syne.variable} antialiased font-dm-sans`}
       >
-        <Navbar />
-        <main className="pt-14">{children}</main>
-        <Footer />
+        <LayoutWrapper>
+          <main>{children}</main>
+        </LayoutWrapper>
       </body>
     </html>
   );

@@ -195,7 +195,7 @@ const Navbar: React.FC = () => {
           {/* Navigation */}
           <nav className="offcanvas-menu mr-[40px] flex flex-col">
             <ul>
-              {navLinks.map((link, idx) => (
+              {navLinks.map((link) => (
                 <li
                   key={link.title}
                   className="border-b border-border-white py-4 group"
@@ -241,7 +241,7 @@ const Navbar: React.FC = () => {
         {/* Bottom: Social icons */}
         <nav className="pb-10">
           <ul className="flex flex-wrap gap-x-4 items-center">
-            {socialLinks.map((social, idx) => (
+            {socialLinks.map((social) => (
               <li key={social.label}>
                 <a
                   href={social.href}
