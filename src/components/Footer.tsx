@@ -19,7 +19,7 @@ const Footer: React.FC = () => {
               </h3>
               <div className="flex flex-wrap items-center mt-10">
                 <span className="text-xl font-bold font-Syne text-white">
-                  Based in Bangladash |
+                  Based in Bangladesh |
                 </span>
                 <div className="ml-5 md:ml-[5px] lg:ml-0 xl:ml-[16px] 2xl:ml-5">
                   <ul className="flex flex-wrap gap-x-4 items-center">
@@ -194,15 +194,13 @@ const Footer: React.FC = () => {
             <div className="grid grid-cols-12">
               <div className="col-span-12 sm:col-span-8 order-last sm:order-first">
                 <p className="text-white text-lg font-normal font-sans leading-7">
-                  ©{new Date().getFullYear()} Badhan San, All Rights Reserved
+                  © {new Date().getFullYear()} Badhan San, All Rights Reserved
                 </p>
               </div>
               <div className="col-span-12 sm:col-span-4 order-first sm:order-last">
                 <div className="flex justify-end mb-2 sm:mb-0">
-                  <Link
-                    id="scrollUp"
+                  <p
                     className="flex flex-wrap items-center gap-2 group"
-                    href="#"
                     aria-label="scroll up"
                   >
                     <span className="text-white text-lg font-normal font-sans leading-7 transition-all ">
@@ -216,7 +214,13 @@ const Footer: React.FC = () => {
                         AB Nahid Agency
                       </Link>
                     </span>
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      id="scrollUp"
+                    >
                       <path
                         d="M12 19V5"
                         stroke="#FFB646"
@@ -232,7 +236,7 @@ const Footer: React.FC = () => {
                         strokeLinejoin="round"
                       />
                     </svg>
-                  </Link>
+                  </p>
                 </div>
               </div>
             </div>

@@ -17,7 +17,7 @@
   --color-black-800: #080808;
   --color-black-700: rgba(8, 8, 8, 0.8);
   --color-black-600: rgba(8, 8, 8, 0.6);
-  --color-black-500: rgba(8, 8, 8, 0.04);
+  --color-featured-properties: rgba(8, 8, 8, 0.04);
 
   --color-black-text-100: rgba(8, 8, 8, 0.1);
   --color-black-text-800: rgba(8, 8, 8, 0.8);
@@ -142,6 +142,25 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+  .paragraph {
+    @apply font-dm-sans text-[1.125rem] font-normal leading-[1.75rem];
+    color: rgba(8, 8, 8, 0.6);
+  }
+  .tab-btn {
+    @apply rounded-lg bg-white py-3 px-4 text-[15px] font-bold capitalize leading-none text-black transition-all duration-150 ease-in-out;
+  }
+
+  .tab-btn:hover {
+    @apply bg-black text-white;
+  }
+
+  .tab-content {
+    @apply hidden;
+  }
+
+  .tab-content.active {
+    @apply block;
   }
 }
 

@@ -1,7 +1,49 @@
 import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
+import { FaGamepad } from "react-icons/fa";
+import { FiBarChart2, FiCamera, FiFilm, FiHeart, FiMic } from "react-icons/fi";
 
 export default function ServicesSection() {
+  const services = [
+    {
+      title: "Shorts & Reels",
+      icon: <FiFilm className="w-8 h-8 text-orange" />,
+      delay: 500,
+      link: "/projects/shorts-reels",
+    },
+    {
+      title: "Documentary",
+      icon: <FiCamera className="w-8 h-8 text-orange" />,
+      delay: 700,
+      link: "/projects/documentary",
+    },
+    {
+      title: "Gaming",
+      icon: <FaGamepad className="w-8 h-8 text-orange" />,
+      delay: 900,
+      link: "/projects/gaming",
+    },
+    {
+      title: "Wedding Video",
+      icon: <FiHeart className="w-8 h-8 text-orange" />,
+      delay: 500,
+      link: "/projects/wedding-video",
+    },
+    {
+      title: "Podcast & Interview",
+      icon: <FiMic className="w-8 h-8 text-orange" />,
+      delay: 700,
+      link: "/projects/podcast-interview",
+    },
+    {
+      title: "Commercial Video",
+      icon: <FiBarChart2 className="w-8 h-8 text-orange" />,
+      delay: 900,
+      link: "/projects/commercial-video",
+    },
+  ];
+
   return (
     <section className="py-[120px]">
       <div className="max-w-7xl mx-auto px-4">
@@ -29,157 +71,38 @@ export default function ServicesSection() {
         <div className="grid grid-cols-12 gap-6">
           <div className="col-span-12 xl:col-span-8">
             <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
-              {/* Service Item */}
-              <div
-                className="px-6 py-7 bg-black-500 rounded-lg transition-all hover:shadow-2xl hover:bg-white group"
-                data-aos="fade-up"
-                data-aos-delay="500"
-              >
-                {/* Icon */}
-                <div className="w-12 h-12 bg-white rounded-full shadow flex flex-wrap items-center justify-center transition-all group-hover:bg-black-500 mb-8">
-                  <ArrowUpRight />
-                </div>
-                {/* Icon End */}
-                <h4>
-                  <a
-                    href="/projects"
-                    className="flex flex-wrap items-end justify-between font-bold text-xl font-Syne text-black-800 group-hover:text-orange transition-all"
-                  >
-                    Mobile Apps <br /> design
-                    <span className="text-black-text-600 group-hover:text-orange group-hover:animate-move-up">
-                      <ArrowUpRight />
-                    </span>
-                  </a>
-                </h4>
-              </div>
-              {/* Service Item End */}
+              {services.map((service) => (
+                <div
+                  key={service.title}
+                  className="px-6 py-7 bg-black-500 rounded-lg transition-all hover:shadow-2xl hover:bg-white group flex flex-col justify-between h-full"
+                  data-aos="fade-up"
+                  data-aos-delay={service.delay}
+                >
+                  {/* Icon */}
+                  <div className="w-12 h-12 bg-white rounded-full shadow flex items-center justify-center transition-all group-hover:bg-black-500 mb-8">
+                    {service.icon}
+                  </div>
 
-              {/* Service Item */}
-              <div
-                className="px-6 py-7 bg-black-500 rounded-lg transition-all hover:shadow-2xl hover:bg-white group"
-                data-aos="fade-up"
-                data-aos-delay="700"
-              >
-                {/* Icon */}
-                <div className="w-12 h-12 bg-white rounded-full shadow flex flex-wrap items-center justify-center transition-all group-hover:bg-black-500 mb-8">
-                  <ArrowUpRight />
-                </div>
-                {/* Icon End */}
-                <h4>
-                  <a
-                    href="/projects"
-                    className="flex flex-wrap items-end justify-between font-bold text-xl font-Syne text-black-800 group-hover:text-orange transition-all"
-                  >
-                    UI/UX <br /> design
-                    <span className="text-black-text-600 group-hover:text-orange group-hover:animate-move-up">
+                  {/* Title & Arrow */}
+                  <div className="mt-auto flex items-end  justify-between gap-3">
+                    <Link
+                      href={service.link}
+                      className="font-bold text-xl font-Syne text-black-800 group-hover:text-orange transition-all flex-1 leading-snug"
+                    >
+                      {service.title}
+                    </Link>
+                    <Link
+                      href={service.link}
+                      className="text-black-text-600 group-hover:text-orange group-hover:animate-move-up shrink-0"
+                    >
                       <ArrowUpRight />
-                    </span>
-                  </a>
-                </h4>
-              </div>
-              {/* Service Item End */}
-
-              {/* Service Item */}
-              <div
-                className="px-6 py-7 bg-black-500 rounded-lg transition-all hover:shadow-2xl hover:bg-white group"
-                data-aos="fade-up"
-                data-aos-delay="900"
-              >
-                {/* Icon */}
-                <div className="w-12 h-12 bg-white rounded-full shadow flex flex-wrap items-center justify-center transition-all group-hover:bg-black-500 mb-8">
-                  <ArrowUpRight />
+                    </Link>
+                  </div>
                 </div>
-                {/* Icon End */}
-                <h4>
-                  <a
-                    href="/projects"
-                    className="flex flex-wrap items-end justify-between font-bold text-xl font-Syne text-black-800 group-hover:text-orange transition-all"
-                  >
-                    Website <br /> design
-                    <span className="text-black-text-600 group-hover:text-orange group-hover:animate-move-up">
-                      <ArrowUpRight />
-                    </span>
-                  </a>
-                </h4>
-              </div>
-              {/* Service Item End */}
-
-              {/* Service Item */}
-              <div
-                className="px-6 py-7 bg-black-500 rounded-lg transition-all hover:shadow-2xl hover:bg-white group"
-                data-aos="fade-up"
-                data-aos-delay="500"
-              >
-                {/* Icon */}
-                <div className="w-12 h-12 bg-white rounded-full shadow flex flex-wrap items-center justify-center transition-all group-hover:bg-black-500 mb-8">
-                  <ArrowUpRight />
-                </div>
-                {/* Icon End */}
-                <h4>
-                  <a
-                    href="/projects"
-                    className="flex flex-wrap items-end justify-between font-bold text-xl font-Syne text-black-800 group-hover:text-orange transition-all"
-                  >
-                    Webflow <br /> development
-                    <span className="text-black-text-600 group-hover:text-orange group-hover:animate-move-up">
-                      <ArrowUpRight />
-                    </span>
-                  </a>
-                </h4>
-              </div>
-              {/* Service Item End */}
-
-              {/* Service Item */}
-              <div
-                className="px-6 py-7 bg-black-500 rounded-lg transition-all hover:shadow-2xl hover:bg-white group"
-                data-aos="fade-up"
-                data-aos-delay="700"
-              >
-                {/* Icon */}
-                <div className="w-12 h-12 bg-white rounded-full shadow flex flex-wrap items-center justify-center transition-all group-hover:bg-black-500 mb-8">
-                  <ArrowUpRight />
-                </div>
-                {/* Icon End */}
-                <h4>
-                  <a
-                    href="/projects"
-                    className="flex flex-wrap items-end justify-between font-bold text-xl font-Syne text-black-800 group-hover:text-orange transition-all"
-                  >
-                    Brand <br /> identity
-                    <span className="text-black-text-600 group-hover:text-orange group-hover:animate-move-up">
-                      <ArrowUpRight />
-                    </span>
-                  </a>
-                </h4>
-              </div>
-              {/* Service Item End */}
-
-              {/* Service Item */}
-              <div
-                className="px-6 py-7 bg-black-500 rounded-lg transition-all hover:shadow-2xl hover:bg-white group"
-                data-aos="fade-up"
-                data-aos-delay="900"
-              >
-                {/* Icon */}
-                <div className="w-12 h-12 bg-white rounded-full shadow flex flex-wrap items-center justify-center transition-all group-hover:bg-black-500 mb-8">
-                  <ArrowUpRight />
-                </div>
-                {/* Icon End */}
-                <h4>
-                  <a
-                    href="/projects"
-                    className="flex flex-wrap items-end justify-between font-bold text-xl font-Syne text-black-800 group-hover:text-orange transition-all"
-                  >
-                    Interaction <br /> design
-                    <span className="text-black-text-600 group-hover:text-orange group-hover:animate-move-up">
-                      <ArrowUpRight />
-                    </span>
-                  </a>
-                </h4>
-              </div>
-              {/* Service Item End */}
+              ))}
             </div>
           </div>
+          {/* Contact Card */}
           <div
             className="col-span-12 xl:col-span-4"
             data-aos="zoom-in"
@@ -202,9 +125,10 @@ export default function ServicesSection() {
                 <span className="text-orange text-lg font-normal leading-none">
                   SAY HELLO!
                 </span>
-                <h4 className="text-white text-2xl xl:text-[32px] font-bold font-Syne leading-none">
+                <h4 className="text-white text-2xl xl:text-[32px] font-bold font-Syne leading-none break-all">
                   badhansencontact@gmail.com
                 </h4>
+                {/* use break-all or break-words to wrap long email */}
               </div>
             </div>
           </div>
