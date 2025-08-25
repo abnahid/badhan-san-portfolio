@@ -19,7 +19,7 @@ const Footer: React.FC = () => {
               </h3>
               <div className="flex flex-wrap items-center mt-10">
                 <span className="text-xl font-bold font-Syne text-white">
-                  Based in Bangladesh |
+                  Based in Worldwide |
                 </span>
                 <div className="ml-5 md:ml-[5px] lg:ml-0 xl:ml-[16px] 2xl:ml-5">
                   <ul className="flex flex-wrap gap-x-4 items-center">
@@ -182,8 +182,8 @@ const Footer: React.FC = () => {
           <div className="grid grid-cols-1 gap-6">
             <div className="py-[72px]">
               <Image
-                src="/assets/SVG/markhenry.svg"
-                alt="markhenry "
+                src="/assets/SVG/Badhan-San.svg"
+                alt="Badhan San Logo"
                 width={1281}
                 height={77}
               />

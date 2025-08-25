@@ -22,7 +22,7 @@ const AboutSection = () => {
 
             <div className="flex flex-wrap flex-col absolute bottom-0 right-0 md:right-[170px] lg:right-[-30px] z-10">
               <span className="text-black-800 text-[65px] xl:text-[80px] font-bold font-Syne leading-none inline-block relative before:rounded-full before:bg-primary before:block before:absolute before:top-[50%] before:left-[-13px] before:-z-[1] before:w-[95px] lg:before:w-[100px] xl:before:w-[110px] before:h-[95px] lg:before:h-[100px] xl:before:h-[110px] before:translate-y-[-50%]">
-                12+
+                4+
               </span>
               <span
                 className="font-syne text-[3rem] leading-[48px] font-bold tracking-[-1.5px] mt-5"
@@ -50,32 +50,33 @@ const AboutSection = () => {
               Badhan San, Video Editor
             </h3>
             <h4 className="text-black-800 text-2xl lg:text-3xl xl:text-[44px] mt-3 mb-4">
-              Based in Bangladesh
+              Based in Worldwide
             </h4>
             <p className="paragraph mb-6">
-              That is where I come in. A lover of words, a wrangler of copy.
-              Here to create copy that not only reflects who you are and what
-              you stand for, but words that truly land with those that read
-              them, calling your audience in and making them .
+              Based worldwide, I specialize in crafting engaging stories through
+              expert video editing, motion graphics, cinematic color grading,
+              sound design, multi-camera editing, and subtitles. Since 2021,
+              I’ve been helping creators, brands, and businesses bring their
+              ideas to life — frame by frame.
             </p>
             <ul className="flex flex-wrap gap-9 2xl:gap-[40px] mb-7">
               <li>
                 <span className="text-black-800 text-[32px] font-bold font-Syne leading-10 relative before:rounded-full before:bg-black-300 before:block before:absolute before:top-[0px] before:left-0 before:right-0 before:-z-[1] before:w-[43px] before:h-[43px]">
-                  08
+                  10+
                 </span>
-                <p className="paragraph">Award winner</p>
+                <p className="paragraph">Worldwide Clients</p>
               </li>
               <li>
                 <span className="text-black-800 text-[32px] font-bold font-Syne leading-10 relative before:rounded-full before:bg-black-300 before:block before:absolute before:top-[0px] before:left-0 before:right-0 before:-z-[1] before:w-[43px] before:h-[43px]">
-                  1.2k
+                  400+
                 </span>
-                <p className="paragraph">Worldwide client</p>
+                <p className="paragraph">Projects Completed</p>
               </li>
               <li>
                 <span className="text-black-800 text-[32px] font-bold font-Syne leading-10 relative before:rounded-full before:bg-black-300 before:block before:absolute before:top-[0px] before:left-0 before:right-0 before:-z-[1] before:w-[43px] before:h-[43px]">
-                  3.5k
+                  08+
                 </span>
-                <p className="paragraph">Job done successfully</p>
+                <p className="paragraph">Video Categories</p>
               </li>
             </ul>
             <div className="flex flex-wrap">

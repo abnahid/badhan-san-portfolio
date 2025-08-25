@@ -80,15 +80,10 @@ const Navbar: React.FC = () => {
         <div className="flex pl-4 xl:pl-0 max-w-[1480] mx-auto">
           {/* Main bar */}
           <div className="flex-1 flex items-center justify-between border-b border-black-800/40 bg-transparent">
-            <Link href="/" className="flex items-center py-3">
-              <Image
-                src="/assets/Image/logo.png"
-                width={120}
-                height={36}
-                alt="logo"
-                className="h-9 w-auto object-contain"
-                priority
-              />
+            <Link href="/">
+              <span className="text-[20px] font-bold text-active">
+                Badhan San
+              </span>
             </Link>
             <Link
               href="/contact"

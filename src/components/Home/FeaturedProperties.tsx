@@ -11,49 +11,41 @@ const TABS = [
 ];
 
 export default function FeaturedProperties() {
-  // State for active tab, default: About me
   const [active, setActive] = useState<string>("about_me_tab");
 
   return (
-    <section className="featured-properties py-[80px] lg:py-[100px]">
+    <section className="bg-black-500 py-[80px] lg:py-[100px]">
       <div className="max-w-7xl mx-auto px-4">
-        <div className="grid grid-cols-12 lg:gap-[60px] xl:gap-[100px] 2xl:gap-[134px]">
+        {/* Parent grid: left (tabs) + right (content) */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 xl:gap-16">
           {/* Left Column */}
-          <div
-            className="col-span-12 lg:col-span-5 2xl:col-span-4"
-            data-aos="fade-up"
-          >
-            <div className="font-bold font-Syne leading-none flex flex-wrap flex-col gap-y-2 mb-4">
+          <div className="lg:col-span-5 2xl:col-span-4" data-aos="fade-up">
+            <div className="font-bold font-Syne flex flex-col gap-y-2 mb-6">
               <span className="text-orange text-xl">Resume</span>
               <h3 className="text-black-800 text-4xl lg:text-5xl xl:text-[64px] tracking-[-1.5px] relative before:rounded-full before:bg-primary before:block before:absolute before:top-[2px] before:left-0 before:-z-[1] before:w-[36px] lg:before:w-[48px] xl:before:w-[64px] before:h-[36px] lg:before:h-[48px] xl:before:h-[64px]">
                 All over my details find here...
               </h3>
             </div>
-            <div className="tabs flex flex-wrap lg:flex-col gap-2 my-8 lg:my-0">
+
+            {/* Tabs */}
+            <div className="flex flex-wrap lg:flex-col gap-3">
               {TABS.map((tab) => (
                 <button
                   key={tab.key}
                   type="button"
-                  className={`tab-btn justify-between items-center inline-flex group${
-                    active === tab.key ? " active" : ""
+                  className={`tab-btn flex justify-between items-center ${
+                    active === tab.key
+                      ? "bg-primary text-white border-primary"
+                      : "border-gray-300 text-black-800 hover:bg-active hover:text-white"
                   }`}
                   onClick={() => setActive(tab.key)}
                 >
                   {tab.label}
-                  <span className="inline-block ml-3 group-hover:animate-move-up">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <span className="ml-2">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
                       <path
-                        d="M7 17L17 7"
+                        d="M7 17L17 7M7 7H17V17"
                         stroke="currentColor"
-                        strokeOpacity="0.9"
-                        strokeWidth={2}
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                      <path
-                        d="M7 7H17V17"
-                        stroke="currentColor"
-                        strokeOpacity="0.9"
                         strokeWidth={2}
                         strokeLinecap="round"
                         strokeLinejoin="round"
@@ -64,10 +56,9 @@ export default function FeaturedProperties() {
               ))}
             </div>
           </div>
-
           {/* Right Column */}
           <div
-            className="col-span-12 lg:col-span-7 2xl:col-span-8"
+            className="lg:col-span-6 2xl:col-span-8"
             data-aos="fade-up"
             data-aos-delay="400"
           >
@@ -77,36 +68,30 @@ export default function FeaturedProperties() {
                 active === "about_me_tab" ? "block" : "hidden"
               } relative`}
             >
-              <div className="grid grid-cols-1">
+              <div className="relative">
                 <h4 className="text-black-800 text-2xl lg:text-[32px] font-bold font-Syne mb-6">
-                  Based in Bangladesh
+                  Based in Worldwide
                 </h4>
-                <p
-                  className="font-dm-sans text-[1.125rem] font-normal leading-[1.75rem] mb-7"
-                  style={{ color: "rgba(8,8,8,0.6)" }}
-                >
-                  Badhan Sen,
+                <p className="font-dm-sans text-lg leading-7 mb-6 text-black/60">
+                  Badhan Sen,{" "}
                   <span className="text-black-800">
                     Video Editor & Motion Graphics Artist
-                  </span>
-                  , based worldwide. This is where I come in—cutting scenes,
+                  </span>{" "}
+                  based worldwide. This is where I come in—cutting scenes,
                   building stories, and turning raw footage into engaging
-                  visuals that connect with your audience.
+                  visuals.
                 </p>
-                <p
-                  className="font-dm-sans text-[1.125rem] font-normal leading-[1.75rem] mb-14"
-                  style={{ color: "rgba(8,8,8,0.6)" }}
-                >
+                <p className="font-dm-sans text-lg leading-7 mb-10 text-black/60">
                   From YouTube videos and reels to documentaries, weddings, and
                   corporate films, I bring ideas to life with sharp edits,
                   cinematic color grading, motion graphics, sound design, and
                   subtitles—frame by frame.
                 </p>
 
-                <ul className="flex-col gap-3 inline-flex">
+                <ul className="flex flex-col gap-4">
                   {[
                     { label: "Name", value: "Badhan Sen" },
-                    { label: "Nationality", value: "Bangladesh" },
+                    { label: "Nationality", value: "Bangladeshi" },
                     { label: "Phone", value: "+880 1540176951" },
                     { label: "Email", value: "badhansencontact@gmail.com" },
                     { label: "Experience", value: "04+ years" },
@@ -114,11 +99,14 @@ export default function FeaturedProperties() {
                     { label: "Discord", value: "badhansen.info" },
                     { label: "Language", value: "English, Hindi" },
                   ].map(({ label, value }) => (
-                    <li key={label} className="gap-10 inline-flex items-center">
-                      <span className="w-[110px] text-black-text-800 text-lg font-normal leading-none">
+                    <li
+                      key={label}
+                      className="flex flex-wrap gap-4 items-center"
+                    >
+                      <span className="w-[110px] text-black/70 text-lg">
                         {label}
                       </span>
-                      <span className="text-black-800 text-2xl font-bold font-Syne leading-8">
+                      <span className="text-black-800 text-xl font-bold font-Syne">
                         {value}
                       </span>
                     </li>
@@ -230,7 +218,7 @@ export default function FeaturedProperties() {
                   },
                   {
                     img: "davinci.png",
-                    skill: "DaVinci Resolve (Color Grading)",
+                    skill: "DaVinci Resolve",
                     percent: "88%",
                   },
                   {
@@ -240,18 +228,18 @@ export default function FeaturedProperties() {
                   },
                   {
                     img: "audition.png",
-                    skill: "Adobe Audition (Sound Design)",
+                    skill: "Adobe Audition",
                     percent: "75%",
                   },
                   {
-                    img: "final-cut.png",
-                    skill: "Final Cut Pro",
-                    percent: "70%",
+                    img: "motion-graphics.png",
+                    skill: "Motion Graphics",
+                    percent: "90%",
                   },
                   {
-                    img: "motion-graphics.png",
-                    skill: "Motion Graphics & VFX",
-                    percent: "90%",
+                    img: "final-cut.png",
+                    skill: "Final   Cut Pro",
+                    percent: "70%",
                   },
                 ].map(({ img, skill, percent }, i) => (
                   <div
@@ -321,22 +309,6 @@ export default function FeaturedProperties() {
                 ))}
               </div>
             </div>
-
-            {/* Decorative SVG */}
-            <span className="flex justify-end mt-14 -mr-3">
-              <svg
-                width="54"
-                height="54"
-                viewBox="0 0 54 54"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M27.5625 0C27.5625 23.1273 9.1875 28.5455 0 27.8182C16.875 31.0909 25.3125 34.3636 27 54C27 40.3636 34.875 30.5455 54 27.8182C46.125 28.3636 29.8125 24 27.5625 0Z"
-                  fill="#FFB646"
-                />
-              </svg>
-            </span>
           </div>
         </div>
       </div>

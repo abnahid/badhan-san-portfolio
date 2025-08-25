@@ -18,7 +18,7 @@ export default function LayoutWrapper({
   const isAdminRoute =
     pathname.startsWith("/admin") || pathname.startsWith("/admin-login");
 
-  const containerClass = !isAdminRoute && !isHome ? "pt-4" : "";
+  const containerClass = !isAdminRoute && !isHome ? "pt-16" : "";
 
   useEffect(() => {
     AOS.init({
