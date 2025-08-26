@@ -6,7 +6,7 @@ import Link from "next/link";
 const projects = [
   {
     id: 1,
-    image: "/assets/Image/skills/project1.png",
+    image: "/assets/Image/projects/project1.png",
     tags: ["APP", "DEVELOPMENT"],
     title: "Basinik Finance App",
     link: "project-details",
@@ -14,7 +14,7 @@ const projects = [
   },
   {
     id: 2,
-    image: "/assets/Image/skills/project2.png",
+    image: "/assets/Image/projects/project2.png",
     tags: ["APP", "DEVELOPMENT"],
     title: "Oxilex Dashboard design",
     link: "project-details",
@@ -121,7 +121,7 @@ const Portfolio = () => {
               className="flex items-center justify-center flex-wrap btn-primary grow"
             >
               View All Project
-              <span className="inline-block ml-3 group-hover:animate-arrow-move-up">
+              <span className="inline-block ml-3 group-hover:animate-move-up">
                 <svg
                   width="24"
                   height="24"

@@ -62,11 +62,11 @@ export default function PricingSection() {
                 data-aos-delay="200"
               >
                 <Link
-                  href="contact.html"
+                  href="contact"
                   className="flex items-center flex-wrap btn-primary group"
                 >
                   Contact for Custom Project
-                  <span className="inline-block ml-3 group-hover:animate-arrow-move-up">
+                  <span className="inline-block ml-3 group-hover:animate-move-up">
                     <svg
                       width="24"
                       height="24"

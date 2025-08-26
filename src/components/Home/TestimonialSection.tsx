@@ -47,7 +47,7 @@ const TestimonialSection = () => {
   const slides = chunkArray(testimonials, 2);
 
   return (
-    <section className="bg-white py-[120px]" data-aos="fade-up">
+    <section className="bg-white pt-[120px]" data-aos="fade-up">
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex flex-col xl:flex-row gap-x-[55px] 2xl:gap-x-[100px] 3xl:gap-x-[165px]">
           {/* Section Title */}

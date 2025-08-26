@@ -1,5 +1,4 @@
 "use client";
-import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 
@@ -90,7 +89,7 @@ const Navbar: React.FC = () => {
               className="flex items-center flex-wrap py-[6px] px-3 text-[15px] font-bold text-active leading-none mr-2 transition-all duration-300 hover:text-orange md:hover:text-white group"
             >
               Let’s Talk
-              <span className="inline-block ml-3 group-hover:animate-arrow-move-up">
+              <span className="inline-block ml-3 group-hover:animate-move-up">
                 <svg
                   width="24"
                   height="24"
@@ -150,14 +149,9 @@ const Navbar: React.FC = () => {
         <div>
           <div className="flex flex-wrap justify-between items-center border-b border-border-white mb-[80px]">
             <Link href="/" className="py-4">
-              <Image
-                src="/assets/Image/offcanvas-logo.png"
-                width={120}
-                height={36}
-                alt="offcanvas logo"
-                className="h-9 w-auto object-contain"
-                priority
-              />
+              <span className="text-[20px] font-bold text-white">
+                Badhan San
+              </span>
             </Link>
             <button
               id="offcanvas-close"
@@ -201,7 +195,7 @@ const Navbar: React.FC = () => {
                     onClick={() => setOffcanvasOpen(false)}
                   >
                     {link.title}
-                    <span className="inline-block group-hover:animate-arrow-move-up">
+                    <span className="inline-block group-hover:animate-move-up">
                       <svg
                         width="24"
                         height="24"

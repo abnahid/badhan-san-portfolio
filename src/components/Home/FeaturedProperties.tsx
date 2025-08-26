@@ -35,7 +35,7 @@ export default function FeaturedProperties() {
                   type="button"
                   className={`tab-btn flex justify-between items-center ${
                     active === tab.key
-                      ? "bg-primary text-white border-primary"
+                      ? "bg-active text-white border-gray-300"
                       : "border-gray-300 text-black-800 hover:bg-active hover:text-white"
                   }`}
                   onClick={() => setActive(tab.key)}
@@ -288,7 +288,7 @@ export default function FeaturedProperties() {
                   >
                     <div className="flex items-start justify-between">
                       <Image
-                        src={`/assets/Image/skills/${img}`}
+                        src={`/assets/Image/awards/${img}`}
                         alt="icons"
                         width={40}
                         height={40}

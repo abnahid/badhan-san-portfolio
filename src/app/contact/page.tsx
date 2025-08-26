@@ -267,7 +267,7 @@ const Contact: React.FC = () => {
                   className="flex items-center flex-wrap rounded-lg border border-transparent bg-[rgba(8,8,8,0.95)] py-3 px-6 text-[15px] font-bold capitalize leading-none text-white transition-all duration-500 ease-in-out hover:border-[rgba(8,8,8,0.4)] hover:bg-transparent hover:text-[rgba(8,8,8,1)] group"
                 >
                   Submit
-                  <span className="inline-block ml-3 group-hover:animate-arrow-move-up">
+                  <span className="inline-block ml-3 group-hover:animate-move-up">
                     <svg
                       width="24"
                       height="24"

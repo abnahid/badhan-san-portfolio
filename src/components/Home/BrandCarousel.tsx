@@ -16,7 +16,7 @@ const BrandCarousel = () => {
   const loopedBrands = [...brands, ...brands];
 
   return (
-    <div className="bg-white brandCarousel py-6" data-aos="flip-down">
+    <div className="bg-white brandCarousel py-[120px]" data-aos="flip-down">
       <div className="max-w-7xl mx-auto px-4 overflow-hidden py-4 border-t border-b border-black-text-100">
         <div className="flex animate-marquee gap-6 ">
           {loopedBrands.map((brand, index) => (
