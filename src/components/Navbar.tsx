@@ -9,7 +9,7 @@ const Navbar: React.FC = () => {
   const navLinks = [
     { title: "Home", href: "/" },
     { title: "About", href: "/about" },
-    { title: "Project", href: "/projects" },
+    { title: "Portfolio", href: "/portfolio" },
     { title: "Project details", href: "/project-details" },
     { title: "Contact", href: "/contact" },
   ];
