@@ -15,8 +15,8 @@ import {
   SidebarMenuItem,
   useSidebar,
 } from "@/components/ui/sidebar";
-import { IconCaretDownFilled, IconLogout, IconUser } from "@tabler/icons-react";
-import Cookies from "js-cookie";
+import Cookies from "@types/js-cookie";
+import { LogOut, User } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
@@ -64,7 +64,7 @@ export function NavUser({
                   {user.role}
                 </span>
               </div>
-              <IconCaretDownFilled className="ml-auto size-4 text-[#8D94AB]" />
+              <User className="ml-auto size-4 text-[#8D94AB]" />
             </SidebarMenuButton>
           </DropdownMenuTrigger>
 
@@ -95,7 +95,7 @@ export function NavUser({
             <Link href="/dashboard/my-profile">
               <DropdownMenuGroup>
                 <DropdownMenuItem className="flex items-center gap-2 px-2.5 py-1.5 text-[#8c94ab] text-[13px] font-semibold rounded-md cursor-pointer hover:bg-[#f5f6fa] focus:bg-[#f5f6fa]">
-                  <IconUser className="w-[18px] h-[18px] text-[#8c94ab]" />
+                  <User className="w-[18px] h-[18px] text-[#8c94ab]" />
                   My Profile
                 </DropdownMenuItem>
               </DropdownMenuGroup>
@@ -109,7 +109,7 @@ export function NavUser({
               onClick={handleLogout}
               className="flex items-center gap-2 px-2.5 py-1.5 text-[#ef5858] text-[13px] font-semibold rounded-md cursor-pointer hover:bg-[#fff3f3] focus:bg-[#fff3f3]"
             >
-              <IconLogout className="w-[18px] h-[18px] text-[#ef5858]" />
+              <LogOut className="w-[18px] h-[18px] text-[#ef5858]" />
               Log Out
             </DropdownMenuItem>
           </DropdownMenuContent>

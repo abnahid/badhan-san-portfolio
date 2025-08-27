@@ -1,7 +1,7 @@
 import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { FaGamepad } from "react-icons/fa";
+import { FaVideo } from "react-icons/fa";
 import { FiBarChart2, FiCamera, FiFilm, FiHeart, FiMic } from "react-icons/fi";
 
 export default function ServicesSection() {
@@ -19,10 +19,10 @@ export default function ServicesSection() {
       link: "/projects/documentary",
     },
     {
-      title: "Gaming",
-      icon: <FaGamepad className="w-8 h-8 text-orange" />,
+      title: "YouTube Video",
+      icon: <FaVideo className="w-8 h-8 text-orange" />,
       delay: 900,
-      link: "/projects/gaming",
+      link: "/projects/youtube-video",
     },
     {
       title: "Wedding Video",
