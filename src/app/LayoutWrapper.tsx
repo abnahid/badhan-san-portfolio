@@ -16,7 +16,7 @@ export default function LayoutWrapper({
   const pathname = usePathname();
   const isHome = pathname === "/";
   const isAdminRoute =
-    pathname.startsWith("/admin") || pathname.startsWith("/admin-login");
+    pathname.startsWith("/dashboard") || pathname.startsWith("/auth/login");
 
   const containerClass = !isAdminRoute && !isHome ? "pt-20" : "";
 
