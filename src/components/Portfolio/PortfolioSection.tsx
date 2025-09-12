@@ -4,7 +4,7 @@ const PortfolioSection = () => {
   const services = [
     { title: "Shorts & Reels", link: "/projects/shorts-reels", delay: 500 },
     { title: "Documentary", link: "/projects/documentary", delay: 700 },
-    { title: "Gaming", link: "/projects/gaming", delay: 900 },
+    { title: "YouTube Video", link: "/projects/youtube-video", delay: 900 },
     { title: "Wedding Video", link: "/projects/wedding-video", delay: 1100 },
     {
       title: "Podcast & Interview",

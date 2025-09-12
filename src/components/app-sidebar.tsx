@@ -1,11 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
-import { IconHomeFilled } from "@tabler/icons-react";
-import { usePathname } from "next/navigation";
-import * as React from "react";
-import { RiGlobalLine } from "react-icons/ri";
-
 import { NavMain } from "@/components/nav-main";
 import { NavUser } from "@/components/nav-user";
 import {
@@ -18,6 +13,10 @@ import {
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
 import { useUser } from "@/context/UserContext";
+import { House } from "lucide-react";
+import { usePathname } from "next/navigation";
+import * as React from "react";
+import { RiGlobalLine } from "react-icons/ri";
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   const pathname = usePathname();
@@ -29,15 +28,15 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       {
         title: "Dashboard",
         url: "/dashboard",
-        icon: IconHomeFilled as React.ComponentType<any>, // ✅ cast
+        icon: House as React.ComponentType<any>, // ✅ cast
         active: pathname === "/dashboard",
       },
 
       {
-        title: "User Alerts",
-        url: "/dashboard/user-alerts",
+        title: "Add Project",
+        url: "/dashboard/add-project",
         icon: RiGlobalLine as React.ComponentType<any>,
-        active: pathname.startsWith("/dashboard/user-alerts"),
+        active: pathname.startsWith("/dashboard/add-project"),
       },
     ],
   };

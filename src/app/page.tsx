@@ -9,7 +9,7 @@ import TestimonialSection from "@/components/Home/TestimonialSection";
 
 export default function Home() {
   return (
-    <>
+    <div className="overflow-x-hidden">
       <HeroSection />
       <ServicesSection />
       <AboutSection />
@@ -18,6 +18,6 @@ export default function Home() {
       <TestimonialSection />
       <BrandCarousel />
       <PricingSection />
-    </>
+    </div>
   );
 }

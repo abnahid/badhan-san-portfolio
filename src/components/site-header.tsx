@@ -1,43 +1,34 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { IconHomeFilled, IconUsers, IconWorld } from "@tabler/icons-react";
+import { House, Users } from "lucide-react";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
-import { PiUserFill } from "react-icons/pi";
-import Toast from "./ui/Toast";
-
 const navMain = [
   {
     title: "Dashboard",
     url: "/dashboard",
-    icon: IconHomeFilled,
+    icon: House,
   },
   {
     title: "User Management",
     url: "/dashboard/user-management",
-    icon: IconUsers,
+    icon: Users,
   },
-  {
-    title: "User Alerts",
-    url: "/dashboard/user-alerts",
-    icon: IconWorld,
-  },
-  {
-    title: "My Profile",
-    url: "/dashboard/my-profile",
-    icon: PiUserFill,
-  },
+  // {
+  //   title: "User Alerts",
+  //   url: "/dashboard/user-alerts",
+  //   icon: IconWorld,
+  // },
+  // {
+  //   title: "My Profile",
+  //   url: "/dashboard/my-profile",
+  //   icon: PiUserFill,
+  // },
 ];
 
 export function SiteHeader() {
   const pathname = usePathname();
-
-  const [toast, setToast] = useState<{
-    message: string;
-    type: "success" | "error" | "warning" | "info";
-  } | null>(null);
 
   const activeSection =
     navMain.find((item) =>
@@ -98,14 +89,6 @@ export function SiteHeader() {
           </div>
         </div>
       </header>
-      {toast && (
-        <Toast
-          message={toast.message}
-          type={toast.type}
-          duration={3000}
-          onClose={() => setToast(null)}
-        />
-      )}
     </>
   );
 }

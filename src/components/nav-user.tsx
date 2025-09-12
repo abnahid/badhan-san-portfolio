@@ -15,7 +15,7 @@ import {
   SidebarMenuItem,
   useSidebar,
 } from "@/components/ui/sidebar";
-import Cookies from "@types/js-cookie";
+import Cookies from "js-cookie";
 import { LogOut, User } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -35,7 +35,7 @@ export function NavUser({
 
   const handleLogout = async () => {
     try {
-      Cookies.remove("token");
+      Cookies.remove("auth_token");
       Cookies.remove("__next_hmr_refresh_hash__");
 
       router.push("/auth/login");

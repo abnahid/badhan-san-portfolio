@@ -63,7 +63,8 @@ export default function HeroSection() {
             <div className="flex flex-wrap mb-[50px] md:mb-[60px] xl:mb-[70px] 2xl:mb-[80px]">
               <span data-aos="fade-right" data-aos-delay="1000">
                 <Link
-                  href="contact"
+                  href="https://calendly.com/badhansencontact/30min?month=2025-08"
+                  target="_blank"
                   className="flex items-center flex-wrap mr-2 group btn-primary"
                 >
                   Let’s Talk

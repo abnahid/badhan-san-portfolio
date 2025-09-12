@@ -1,25 +1,26 @@
-import jwt from "jsonwebtoken";
+import { jwtVerify } from "jose";
 import type { NextRequest } from "next/server";
 import { NextResponse } from "next/server";
 
-export function middleware(req: NextRequest) {
+async function verifyJWT(token: string) {
+  const secret = new TextEncoder().encode(process.env.JWT_SECRET!);
+  const { payload } = await jwtVerify(token, secret);
+  return payload;
+}
+
+export async function middleware(req: NextRequest) {
   const token = req.cookies.get("auth_token")?.value;
   const { pathname } = req.nextUrl;
 
-  // Allow homepage ("/") always
-  if (pathname === "/") {
-    return NextResponse.next();
-  }
+  if (pathname === "/") return NextResponse.next();
 
-  // Handle login page
-  if (pathname.startsWith("/login")) {
+  if (pathname.startsWith("/auth/login")) {
     if (token) {
       try {
-        jwt.verify(token, process.env.JWT_SECRET!);
-        // Already logged in → go to dashboard
+        await verifyJWT(token);
         return NextResponse.redirect(new URL("/dashboard", req.url));
-      } catch {
-        // Invalid token → clear cookie and allow login
+      } catch (err) {
+        console.error("JWT verification failed on /auth/login:", err);
         const res = NextResponse.next();
         res.cookies.set("auth_token", "", { maxAge: 0 });
         return res;
@@ -28,20 +29,21 @@ export function middleware(req: NextRequest) {
     return NextResponse.next();
   }
 
-  // Handle dashboard (protected route)
   if (pathname.startsWith("/dashboard")) {
     if (!token) {
-      return NextResponse.redirect(new URL("auth/login", req.url));
+      return NextResponse.redirect(new URL("/auth/login", req.url));
     }
     try {
-      jwt.verify(token, process.env.JWT_SECRET!);
+      await verifyJWT(token);
       return NextResponse.next();
-    } catch {
-      return NextResponse.redirect(new URL("auth/login", req.url));
+    } catch (err) {
+      console.error("JWT verification failed on /dashboard:", err);
+      const res = NextResponse.redirect(new URL("/auth/login", req.url));
+      res.cookies.set("auth_token", "", { maxAge: 0 });
+      return res;
     }
   }
 
-  // Allow everything else
   return NextResponse.next();
 }
 

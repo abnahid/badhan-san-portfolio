@@ -18,7 +18,8 @@ export default function LayoutWrapper({
   const isAdminRoute =
     pathname.startsWith("/dashboard") || pathname.startsWith("/auth/login");
 
-  const containerClass = !isAdminRoute && !isHome ? "pt-20" : "";
+  const containerClass =
+    !isAdminRoute && !isHome ? "pt-20 overflow-x-hidden" : "";
 
   useEffect(() => {
     AOS.init({
