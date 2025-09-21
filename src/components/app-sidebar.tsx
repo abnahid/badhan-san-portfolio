@@ -28,7 +28,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       {
         title: "Dashboard",
         url: "/dashboard",
-        icon: House as React.ComponentType<any>, // ✅ cast
+        icon: House as React.ComponentType<any>,
         active: pathname === "/dashboard",
       },
 
@@ -37,6 +37,13 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         url: "/dashboard/add-project",
         icon: RiGlobalLine as React.ComponentType<any>,
         active: pathname.startsWith("/dashboard/add-project"),
+      },
+
+      {
+        title: "All Categories",
+        url: "/dashboard/categories",
+        icon: RiGlobalLine as React.ComponentType<any>,
+        active: pathname.startsWith("/dashboard/categories"),
       },
     ],
   };
@@ -51,7 +58,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
               className="data-[slot=sidebar-menu-button]:!p-1.5"
             >
               <span className="text-[20px] font-bold text-active">
-                Badhan San
+                Badhan Sen
               </span>
             </SidebarMenuButton>
           </SidebarMenuItem>

@@ -38,10 +38,34 @@ export default function AddProjectForm({ categories }: FormProps) {
     setLoading(true);
     setSuccess(false);
 
+    const convertToEmbedUrl = (url: string): string => {
+      try {
+        let videoId = "";
+
+        if (url.includes("youtu.be/")) {
+          videoId = url.split("youtu.be/")[1].split("?")[0];
+        } else if (url.includes("watch?v=")) {
+          videoId = url.split("watch?v=")[1].split("&")[0];
+        } else if (url.includes("/embed/")) {
+          return url;
+        }
+
+        return `https://www.youtube.com/embed/${videoId}`;
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      } catch (error) {
+        return url;
+      }
+    };
+
+    const formattedForm = {
+      ...form,
+      videoUrl: convertToEmbedUrl(form.videoUrl),
+    };
+
     await fetch("/api/portfolio", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(form),
+      body: JSON.stringify(formattedForm),
     });
 
     setLoading(false);

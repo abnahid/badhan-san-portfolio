@@ -22,7 +22,7 @@ export default function AuthLayout({ children }: { children: ReactNode }) {
 
         {/* Footer */}
         <footer className=" text-center text-[12px] text-Subtitle">
-          © {new Date().getFullYear()} Badhan San, All Rights Reserved
+          © {new Date().getFullYear()} Badhan Sen, All Rights Reserved
         </footer>
       </div>
     </div>

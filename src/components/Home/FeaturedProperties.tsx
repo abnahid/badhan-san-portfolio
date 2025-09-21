@@ -97,7 +97,7 @@ export default function FeaturedProperties() {
                     { label: "Experience", value: "04+ years" },
                     { label: "Freelance", value: "Available" },
                     { label: "Discord", value: "badhansen.info" },
-                    { label: "Language", value: "English, Hindi" },
+                    { label: "Language", value: "English, Hindi, Bangla" },
                   ].map(({ label, value }) => (
                     <li
                       key={label}
@@ -163,16 +163,16 @@ export default function FeaturedProperties() {
               <div className="grid grid-cols-1 gap-6">
                 {[
                   {
-                    date: "003/2008 – 07/2011",
-                    degree: "BA Business Management",
+                    date: "003/2021 – 07/2023",
+                    degree: "Higher Secondary Certificate",
                   },
                   {
-                    date: "03/2008 – 07/2011",
-                    degree: "BA Business Management",
+                    date: "03/2021 – 07/2024",
+                    degree: "Shorts Editing Mastery ",
                   },
                   {
-                    date: "03/2008 – 07/2011",
-                    degree: "BA Business Management",
+                    date: "03/2021 – 07/2024",
+                    degree: "Editing blueprint",
                   },
                 ].map(({ date, degree }, i) => (
                   <div
@@ -237,9 +237,14 @@ export default function FeaturedProperties() {
                     percent: "90%",
                   },
                   {
-                    img: "final-cut.png",
+                    img: "colour-grading.png",
                     skill: "Final   Cut Pro",
-                    percent: "70%",
+                    percent: "85%",
+                  },
+                  {
+                    img: "storytelling.png",
+                    skill: "Storytelling",
+                    percent: "90%",
                   },
                 ].map(({ img, skill, percent }, i) => (
                   <div

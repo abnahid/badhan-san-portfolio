@@ -83,7 +83,7 @@ export function HeroVideoDialog({
       <button
         type="button"
         aria-label="Play video"
-        className="group relative cursor-pointer border-0 bg-transparent pb-[80px] lg:pb-[100px] xl:pb-[120px]"
+        className="group relative cursor-pointer border-0 bg-transparent "
         onClick={() => setIsVideoOpen(true)}
       >
         {/* Wrapper with aspect ratio to keep thumbnail + overlay aligned */}

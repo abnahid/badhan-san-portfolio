@@ -20,7 +20,7 @@ const Footer: React.FC = () => {
               </h3>
               <div className="flex flex-wrap items-center mt-6 sm:mt-10">
                 <span className="text-base sm:text-lg md:text-xl font-bold font-Syne text-white">
-                  Based in Worldwide |
+                  Based in Worldwide
                 </span>
                 <div className="ml-3 sm:ml-4 lg:ml-0 xl:ml-4 2xl:ml-5">
                   <ul className="flex flex-wrap gap-x-3 sm:gap-x-4 items-center">
@@ -140,8 +140,8 @@ const Footer: React.FC = () => {
           <div className="grid grid-cols-1 gap-6">
             <div className="py-12 flex justify-center">
               <Image
-                src="/assets/SVG/Badhan-San.svg"
-                alt="Badhan San Logo"
+                src="/assets/SVG/Badhan-Sen.svg"
+                alt="Badhan Sen Logo"
                 width={1281}
                 height={77}
                 className="lg:w-[1281px]"
@@ -153,7 +153,7 @@ const Footer: React.FC = () => {
           <div className="border-t border-border-white pt-6">
             <div className="flex flex-col md:flex-row justify-between items-center gap-3">
               <p className="text-white text-sm sm:text-base md:text-lg font-normal font-sans text-center sm:text-left">
-                © {new Date().getFullYear()} Badhan San, All Rights Reserved
+                © {new Date().getFullYear()} Badhan Sen, All Rights Reserved
               </p>
               <p className="flex items-center gap-2 text-sm sm:text-base text-white text-center sm:text-right">
                 Development by{" "}

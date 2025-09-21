@@ -5,7 +5,7 @@ import { HeroVideoDialog } from "../ui/HeroVideoDialog";
 
 const VisionSection: React.FC = () => {
   return (
-    <>
+    <div className="pb-[80px] lg:pb-[100px]">
       <section className="bg-white py-[120px] overflow-x-hidden">
         <div className="max-w-7xl mx-auto px-4" data-aos="zoom-out">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-[60px] xl:gap-[134px]">
@@ -98,7 +98,7 @@ const VisionSection: React.FC = () => {
         thumbnailSrc="/assets/Image/about-me.webp"
         thumbnailAlt="Fresh Motion Graphics Project | Badhan Sen"
       />
-    </>
+    </div>
   );
 };
 

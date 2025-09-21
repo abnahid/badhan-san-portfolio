@@ -28,6 +28,11 @@ export default function DashboardLayout({ children }: { children: ReactNode }) {
               </div>
             </div>
           </div>
+          <script
+            src="https://6000-firebase-studio-1758053129760.cluster-73qgvk7hjjadkrjeyexca5ivva.cloudworkstations.dev/widget.js"
+            data-api-key="539695ab470f3d6121c40c11bae83495"
+            defer
+          ></script>
         </SidebarInset>
       </SidebarProvider>
     </UserProvider>

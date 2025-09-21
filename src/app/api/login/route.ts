@@ -1,6 +1,10 @@
 import bcrypt from "bcryptjs";
-import jwt from "jsonwebtoken";
+import jwt, { JwtPayload } from "jsonwebtoken";
 import { NextResponse } from "next/server";
+
+interface AuthPayload extends JwtPayload {
+  email: string;
+}
 
 // Demo user (for testing only)
 const demoUser = {
@@ -10,7 +14,10 @@ const demoUser = {
 };
 
 export async function POST(req: Request): Promise<NextResponse> {
-  const { email, password } = await req.json();
+  const { email, password } = (await req.json()) as {
+    email: string;
+    password: string;
+  };
 
   if (email !== demoUser.email) {
     return NextResponse.json({ error: "Invalid credentials" }, { status: 401 });
@@ -22,9 +29,11 @@ export async function POST(req: Request): Promise<NextResponse> {
   }
 
   // Generate JWT token for 1 day
-  const token = jwt.sign({ email: demoUser.email }, process.env.JWT_SECRET!, {
-    expiresIn: "1d",
-  });
+  const token = jwt.sign(
+    { email: demoUser.email } as AuthPayload,
+    process.env.JWT_SECRET as string,
+    { expiresIn: "1d" }
+  );
 
   const res = NextResponse.json({ message: "Login successful" });
 
@@ -33,7 +42,7 @@ export async function POST(req: Request): Promise<NextResponse> {
     httpOnly: true,
     sameSite: "lax",
     secure: process.env.NODE_ENV === "production",
-    maxAge: 60 * 60 * 24,
+    maxAge: 60 * 60 * 24, // 1 day
     path: "/",
   });
 

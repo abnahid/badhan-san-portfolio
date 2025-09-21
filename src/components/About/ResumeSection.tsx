@@ -63,19 +63,19 @@ interface ResumeData {
 
 const resumeData: ResumeData = {
   aboutMe: {
-    name: "Badhan San",
-    nationality: "Worldwide",
-    phone: "+(880) 123-456-789",
+    name: "Badhan Sen",
+    nationality: "Bangladeshi",
+    phone: "+880 1540176951",
     email: "badhansencontact@gmail.com",
     experience: "4+ years",
     freelance: "Available",
-    skype: "badhan.san.editor",
-    language: "English, Bangla",
+    discord: "badhansen.info",
+    language: "English, Hindi, Bangla",
     image: "/assets/Image/about1.png",
     title: "Video Editor",
     location: "Worldwide",
     bio: [
-      "I’m Badhan San, a professional Video Editor based worldwide.",
+      "I’m Badhan Sen, a professional Video Editor based worldwide.",
       "My passion lies in creating visuals that bring stories to life — editing content that not only showcases who you are but connects with your audience on an emotional level.",
     ],
   },
@@ -254,10 +254,10 @@ export default function ResumeSection() {
                   </li>
                   <li className="flex flex-wrap gap-4 items-center">
                     <strong className="w-[110px] text-black/70 text-lg">
-                      Skype:
+                      Discord:
                     </strong>
                     <span className="text-black-800 text-2xl font-bold font-Syne leading-8">
-                      {resumeData.aboutMe.skype}
+                      {resumeData.aboutMe.discord}
                     </span>
                   </li>
                   <li className="flex flex-wrap gap-4 items-center">

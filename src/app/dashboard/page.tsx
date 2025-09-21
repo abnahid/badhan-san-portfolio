@@ -1,11 +1,13 @@
-// app/dashboard/page.tsx
+import { HighlightCard } from "@/components/dashboard/HighlightCard";
+import { HighlightsDashboard } from "@/components/dashboard/HighlightsDashboard";
 import { SectionCards } from "@/components/section-cards";
 
 export default function DashboardPage() {
   return (
     <>
       <SectionCards />
-      <div className="px-4 lg:px-6"> Home</div>
+      <HighlightsDashboard />
+      <HighlightCard />
     </>
   );
 }

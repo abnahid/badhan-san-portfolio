@@ -23,18 +23,19 @@ export default function LayoutWrapper({
 
   useEffect(() => {
     AOS.init({
-      duration: 1000,
+      duration: 600,
       easing: "ease-in-out",
       once: true,
       mirror: false,
     });
-    AOS.refresh(); // Refresh animations when route changes
+    AOS.refresh();
   }, [pathname]);
 
   return (
     <>
       <header>{!isAdminRoute && <Navbar />}</header>
       <div className={containerClass}>{children}</div>
+
       {!isAdminRoute && <Footer />}
     </>
   );

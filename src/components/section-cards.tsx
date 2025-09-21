@@ -1,4 +1,5 @@
 "use client";
+
 import { useEffect, useState } from "react";
 import {
   PiMagnifyingGlassDuotone,
@@ -8,17 +9,19 @@ import {
   PiUsersDuotone,
 } from "react-icons/pi";
 import { RiGlobalLine } from "react-icons/ri";
+
+// Reuse your existing StatCard component
 function CountUp({ end }: { end: number }) {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
     let start = 0;
-    const duration = 1000; // 1s
-    const stepTime = Math.abs(Math.floor(duration / end));
+    const duration = 1000;
+    const stepTime = Math.abs(Math.floor(duration / end)) || 1;
     const timer = setInterval(() => {
       start += 1;
       setCount(start);
-      if (start === end) clearInterval(timer);
+      if (start >= end) clearInterval(timer);
     }, stepTime);
     return () => clearInterval(timer);
   }, [end]);
@@ -45,7 +48,7 @@ function StatCard({
 }) {
   return (
     <div
-      className=" px-6 py-5 rounded-lg inline-flex  items-center gap-5"
+      className="px-6 py-5 rounded-lg inline-flex items-center gap-5"
       style={{ backgroundColor: bg }}
     >
       <div
@@ -66,52 +69,63 @@ function StatCard({
   );
 }
 
+// Map category names to icons
+const categoryIcons: Record<string, React.ElementType> = {
+  "Shorts & Reels": PiUsersDuotone,
+  Documentary: PiShieldCheck,
+  "YouTube Video": PiMoney,
+  "Wedding Video": RiGlobalLine,
+  "Podcast & Interview": PiMagnifyingGlassDuotone,
+  "Commercial Video": PiShoppingCartDuotone,
+};
+
+interface PortfolioItem {
+  categoryName: string;
+  title: string;
+  videoUrl: string;
+}
+
 export function SectionCards() {
+  const [portfolios, setPortfolios] = useState<PortfolioItem[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchPortfolios = async () => {
+      try {
+        const res = await fetch("/api/portfolio");
+        const data: PortfolioItem[] = await res.json();
+        setPortfolios(data);
+      } catch (err) {
+        console.error("Failed to fetch portfolios:", err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchPortfolios();
+  }, []);
+
+  if (loading) return <p>Loading...</p>;
+
+  // Get unique categories from portfolios
+  const categories = Array.from(new Set(portfolios.map((p) => p.categoryName)));
+
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 px-4 lg:px-6">
-      <StatCard icon={PiUsersDuotone} label="Total Users" value={320} />
-      <StatCard
-        icon={PiShieldCheck}
-        label="Verified Users"
-        value={120}
-        subValue="/320"
-        bg="#e9fdf1"
-        iconBg="#c9f5db"
-        iconColor="#1fa84f"
-      />
-      <StatCard
-        icon={PiMoney}
-        label="Subscribed Users"
-        value={85}
-        subValue="/320"
-        bg="#f8f2ff"
-        iconBg="#e4d7fa"
-        iconColor="#8b5cf6"
-      />
-      <StatCard
-        icon={PiShoppingCartDuotone}
-        label="Total Recall Searched"
-        value={497}
-        bg="#fff5f2"
-        iconBg="#ffe1d9"
-        iconColor="#f97316"
-      />
-      <StatCard
-        icon={PiMagnifyingGlassDuotone}
-        label="Total Product Searched"
-        value={284}
-        bg="#f2faff"
-        iconBg="#d9f2ff"
-        iconColor="#3b82f6"
-      />
-      <StatCard
-        icon={RiGlobalLine}
-        label="Total Alert Posted"
-        value={162}
-        bg="#fff2f5"
-        iconBg="#ffd9e2"
-        iconColor="#ef4444"
-      />
+      {categories.map((cat) => {
+        const count = portfolios.filter((p) => p.categoryName === cat).length;
+        const Icon = categoryIcons[cat] || PiUsersDuotone;
+
+        return (
+          <StatCard
+            key={cat}
+            icon={Icon}
+            label={cat}
+            value={count}
+            subValue={`/${portfolios.length}`}
+          />
+        );
+      })}
     </div>
   );
 }

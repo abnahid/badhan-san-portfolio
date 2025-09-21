@@ -1,4 +1,5 @@
 import { dmSans, syne } from "@/Font/font";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import LayoutWrapper from "./LayoutWrapper";
 
@@ -15,6 +16,7 @@ export default function RootLayout({
         <LayoutWrapper>
           <main>{children}</main>
         </LayoutWrapper>
+        <Analytics />
       </body>
     </html>
   );

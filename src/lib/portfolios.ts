@@ -1,19 +1,16 @@
 import Portfolio from "@/models/Portfolio";
 import { connectDB } from "./mongodb";
 
-// ✅ Get all portfolios
 export async function getPortfolios() {
   await connectDB();
   return await Portfolio.find().lean();
 }
 
-// ✅ Get by category
 export async function getPortfoliosByCategory(categoryName: string) {
   await connectDB();
   return await Portfolio.find({ categoryName }).lean();
 }
 
-// ✅ Add new portfolio
 export async function addPortfolio(data: {
   categoryId: string;
   categoryName: string;
@@ -26,7 +23,6 @@ export async function addPortfolio(data: {
   return await newPortfolio.save();
 }
 
-// ✅ Update portfolio
 export async function updatePortfolio(
   id: string,
   data: Partial<{
@@ -41,7 +37,6 @@ export async function updatePortfolio(
   return await Portfolio.findByIdAndUpdate(id, data, { new: true }).lean();
 }
 
-// ✅ Delete portfolio
 export async function deletePortfolio(id: string) {
   await connectDB();
   return await Portfolio.findByIdAndDelete(id);

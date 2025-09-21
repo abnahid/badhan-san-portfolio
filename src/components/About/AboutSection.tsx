@@ -19,24 +19,25 @@ const AboutPage = () => {
             <span className="text-orange text-xl">About me</span>
 
             <h3 className="text-black-800 text-4xl lg:text-5xl xl:text-[64px] tracking-[-1.5px]">
-              Badhan San
+              Badhan Sen
             </h3>
 
             <h4 className="text-black-800 text-2xl mt-3 mb-4">Video Editor</h4>
 
             <p className="text-xl font-bold font-Syne leading-7 mb-6">
-              A passionate Video Editor with 4+ years of experience in crafting
-              cinematic edits, social media content, and brand storytelling.
-              Dedicated to transforming raw footage into engaging visuals that
-              connect with audiences worldwide.
+              I am Badhan Sen, a freelance video editor from Bangladesh, working
+              since 2021. I specialize in crafting engaging stories through
+              video with expert editing, motion graphics, cinematic color
+              grading, sound design, multi-camera editing, and subtitles.
             </p>
 
             <p className="paragraph mb-6">
-              I believe every story deserves to be told in the most powerful
-              way. My mission is to help creators, businesses, and brands bring
-              their vision to life through seamless editing, creative
-              storytelling, and professional finishing touches that leave a
-              lasting impact.
+              Using industry standard software, I can handle large projects with
+              over 100GB of footage and collaborate globally to turn ideas into
+              compelling visual experiences. My goal is to deliver projects on
+              time while remaining open to revisions, ensuring they meet your
+              expectations. You can trust that I will provide results you’ll
+              love.
             </p>
 
             <div>

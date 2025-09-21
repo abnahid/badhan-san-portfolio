@@ -47,41 +47,40 @@ const AboutSection = () => {
           <div className="font-bold font-Syne leading-none flex flex-wrap flex-col gap-y-2">
             <span className="text-orange text-xl">Hello I’m</span>
             <h3 className="text-black-800 text-4xl lg:text-5xl xl:text-[64px] tracking-[-1.5px] relative before:rounded-full before:bg-primary before:block before:absolute before:top-[2px] before:left-0 before:-z-[1] before:w-[36px] lg:before:w-[48px] xl:before:w-[64px] before:h-[36px] lg:before:h-[48px] xl:before:h-[64px]">
-              Badhan San, Video Editor
+              Badhan Sen, Video Editor
             </h3>
             <h4 className="text-black-800 text-2xl lg:text-3xl xl:text-[44px] mt-3 mb-4">
               Based in Worldwide
             </h4>
             <p className="paragraph mb-6">
-              Based worldwide, I specialize in crafting engaging stories through
-              expert video editing, motion graphics, cinematic color grading,
-              sound design, multi-camera editing, and subtitles. Since 2021,
-              I’ve been helping creators, brands, and businesses bring their
-              ideas to life — frame by frame.
+              Collaboratively leverage front-end editing techniques to enhance
+              visual storytelling, without requiring deep technical expertise.
+              Continuously adapt and repurpose diverse content platforms to
+              maximize creative impact.
             </p>
             <ul className="flex flex-wrap gap-9 2xl:gap-[40px] mb-7">
               <li>
                 <span className="text-black-800 text-[32px] font-bold font-Syne leading-10 relative before:rounded-full before:bg-black-300 before:block before:absolute before:top-[0px] before:left-0 before:right-0 before:-z-[1] before:w-[43px] before:h-[43px]">
-                  10+
+                  210+
                 </span>
                 <p className="paragraph">Worldwide Clients</p>
               </li>
               <li>
                 <span className="text-black-800 text-[32px] font-bold font-Syne leading-10 relative before:rounded-full before:bg-black-300 before:block before:absolute before:top-[0px] before:left-0 before:right-0 before:-z-[1] before:w-[43px] before:h-[43px]">
-                  400+
+                  40+
                 </span>
                 <p className="paragraph">Projects Completed</p>
               </li>
               <li>
                 <span className="text-black-800 text-[32px] font-bold font-Syne leading-10 relative before:rounded-full before:bg-black-300 before:block before:absolute before:top-[0px] before:left-0 before:right-0 before:-z-[1] before:w-[43px] before:h-[43px]">
-                  08+
+                  05+
                 </span>
                 <p className="paragraph">Video Categories</p>
               </li>
             </ul>
             <div className="flex flex-wrap">
               <Link
-                href="contact"
+                href="https://www.canva.com/design/DAGqy5B4gHI/2zV_dr8mKFayohREnxku8Q/view?utm_content=DAGqy5B4gHI&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h9efbc2cb12"
                 className="flex items-center flex-wrap btn-primary group"
               >
                 Download my resume
