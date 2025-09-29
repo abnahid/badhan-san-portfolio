@@ -77,7 +77,7 @@ export default function FeaturedProperties() {
                   <span className="text-black-800">
                     Video Editor & Motion Graphics Artist
                   </span>{" "}
-                  based worldwide. This is where I come in—cutting scenes,
+                  based worldwide. This is where I come in cutting scenes,
                   building stories, and turning raw footage into engaging
                   visuals.
                 </p>
@@ -85,7 +85,7 @@ export default function FeaturedProperties() {
                   From YouTube videos and reels to documentaries, weddings, and
                   corporate films, I bring ideas to life with sharp edits,
                   cinematic color grading, motion graphics, sound design, and
-                  subtitles—frame by frame.
+                  subtitles frame by frame.
                 </p>
 
                 <ul className="flex flex-col gap-4">
@@ -126,11 +126,22 @@ export default function FeaturedProperties() {
               </h4>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-5">
                 {[
-                  { date: "03/216 – Running", role: "Lead digital marketer" },
-                  { date: "03/2008 – 07/2011", role: "JavaScript developer" },
-                  { date: "03/2008 – 07/2011", role: "Product designer" },
-                  { date: "03/2008 – 07/2011", role: "UX researcher" },
-                ].map(({ date, role }, i) => (
+                  {
+                    date: "2021 – Running",
+                    company: "Freelance",
+                    role: "Lead Video Editor",
+                  },
+                  {
+                    date: "2019 – 2021",
+                    company: "Creative Studio",
+                    role: "Motion Graphics Designer",
+                  },
+                  {
+                    date: "2017 – 2019",
+                    company: "Media House",
+                    role: "Video Production Assistant",
+                  },
+                ].map(({ date, role, company }, i) => (
                   <div
                     key={i}
                     className="pt-[30px] px-7 pb-7 bg-black-500 rounded-2xl transition-all hover:shadow-2xl hover:bg-white flex flex-wrap flex-col gap-8 justify-between"
@@ -140,7 +151,7 @@ export default function FeaturedProperties() {
                     </span>
                     <div>
                       <p className="text-lg font-normal font-sans leading-7 text-black-800 relative z-[1] before:rounded-full before:bg-orange before:block before:absolute before:top-[50%] before:translate-y-[-50%] before:left-0 before:-z-[1] before:w-[8px] before:h-[8px] pl-4">
-                        Axtra
+                        {company}
                       </p>
                       <h4 className="font-bold font-Syne leading-normal text-2xl text-black-800">
                         {role}
@@ -163,33 +174,41 @@ export default function FeaturedProperties() {
               <div className="grid grid-cols-1 gap-6">
                 {[
                   {
-                    date: "003/2021 – 07/2023",
-                    degree: "Higher Secondary Certificate",
+                    date: "2021 – 2023",
+                    school: "Sylhet Science and Technology College",
+                    degree: "Higher Secondary Certificate (HSC)",
                   },
                   {
-                    date: "03/2021 – 07/2024",
-                    degree: "Shorts Editing Mastery ",
+                    date: "2024",
+                    school: "Mexemy",
+                    degree: "Video Editing & Storytelling",
                   },
                   {
-                    date: "03/2021 – 07/2024",
-                    degree: "Editing blueprint",
+                    date: "2024",
+                    school: "Mexemy",
+                    degree: "Shorts Editing Mastery",
                   },
-                ].map(({ date, degree }, i) => (
+                  {
+                    date: "2025",
+                    school: "Alpha Motion Picture",
+                    degree: "Editing Blueprint",
+                  },
+                ].map(({ date, degree, school }, i) => (
                   <div
                     key={i}
-                    className="pt-[30px] px-7 pb-7 bg-black-500 rounded-2xl transition-all hover:shadow-2xl hover:bg-white flex flex-wrap gap-[30px] md:gap-[60px] lg:gap-[104px]"
+                    className="pt-[30px] px-7 pb-7 bg-black-500 rounded-2xl transition-all hover:shadow-2xl hover:bg-white flex flex-wrap justify-between items-center gap-6"
                   >
-                    <span className="text-sm font-normal font-Inter leading-tight text-black-text-800">
-                      {date}
-                    </span>
                     <div className="flex-1">
                       <p className="text-lg font-normal font-sans leading-7 text-black-800 relative z-[1] before:rounded-full before:bg-orange before:block before:absolute before:top-[50%] before:translate-y-[-50%] before:left-0 before:-z-[1] before:w-[8px] before:h-[8px] pl-4">
-                        Axtra
+                        {school}
                       </p>
                       <h4 className="font-bold font-Syne leading-normal text-2xl text-black-800">
                         {degree}
                       </h4>
                     </div>
+                    <span className="text-sm font-normal font-Inter leading-tight text-black-text-800">
+                      {date}
+                    </span>
                   </div>
                 ))}
               </div>
@@ -237,11 +256,6 @@ export default function FeaturedProperties() {
                     percent: "90%",
                   },
                   {
-                    img: "colour-grading.png",
-                    skill: "Final   Cut Pro",
-                    percent: "85%",
-                  },
-                  {
                     img: "storytelling.png",
                     skill: "Storytelling",
                     percent: "90%",
@@ -282,11 +296,22 @@ export default function FeaturedProperties() {
               </h4>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 {[
-                  { img: "w-dot.png", year: "2018" },
-                  { img: "webby.png", year: "2018" },
-                  { img: "fwa.png", year: "2018" },
-                  { img: "wordpress.png", year: "2018" },
-                ].map(({ img, year }, i) => (
+                  {
+                    img: "mexemy.png",
+                    year: "2024",
+                    title: "Mexemy Certified Creative Video Editor",
+                  },
+                  {
+                    img: "fwa.png",
+                    year: "2023",
+                    title: "Best Freelance Video Editor Award",
+                  },
+                  {
+                    img: "webby.png",
+                    year: "2022",
+                    title: "Top Creative Editing Recognition",
+                  },
+                ].map(({ img, year, title }, i) => (
                   <div
                     key={i}
                     className="p-8 bg-black-500 rounded-2xl transition-all hover:shadow-2xl hover:bg-white group flex flex-wrap flex-col gap-8"
@@ -307,7 +332,7 @@ export default function FeaturedProperties() {
                         Winner
                       </p>
                       <h4 className="font-bold font-Syne leading-normal text-xl text-black-800">
-                        01X Developer Award
+                        {title}
                       </h4>
                     </div>
                   </div>

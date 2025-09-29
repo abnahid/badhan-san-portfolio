@@ -28,7 +28,7 @@ const AboutPage = () => {
               I am Badhan Sen, a freelance video editor from Bangladesh, working
               since 2021. I specialize in crafting engaging stories through
               video with expert editing, motion graphics, cinematic color
-              grading, sound design, multi-camera editing, and subtitles.
+              grading, sound design, multi camera editing, and subtitles.
             </p>
 
             <p className="paragraph mb-6">

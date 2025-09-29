@@ -10,27 +10,33 @@ import Image from "next/image";
 const testimonials = [
   {
     text: "Badhan perfectly understood the vibe I wanted for my Instagram reel. The pacing, music, and transitions were spot on. Super smooth process!",
-    author: "Sarah M. – Content Creator",
+    author: "Sarah M.",
+    role: "Content Creator",
   },
   {
     text: "Working with Badhan was amazing. He turned my raw clips into a clean, engaging YouTube video with great flow and sound. Highly recommend!",
-    author: "Jake R. – YouTuber",
+    author: "Jake R.",
+    role: "YouTuber",
   },
   {
     text: "Badhan brought our documentary to life with thoughtful editing, beautiful color grading, and perfect timing. Truly professional work.",
-    author: "Maya D. – Filmmaker",
+    author: "Maya D.",
+    role: "Filmmaker",
   },
   {
     text: "From sound design to motion graphics, Badhan elevated our wedding film beyond expectations. Every moment felt cinematic and emotional.",
-    author: "Emily K. – Bride",
+    author: "Emily K.",
+    role: "Bride",
   },
   {
     text: "We collaborated on a corporate video project, and Badhan’s editing expertise made our brand message clear and powerful. Very reliable!",
-    author: "David W. – Manager",
+    author: "David W.",
+    role: "Manager",
   },
   {
     text: "As a fellow creative, I’ve seen how dedicated Badhan is to his craft. His editing and storytelling skills are top-notch and inspiring.",
-    author: "Ab Nahid – Creative Director",
+    author: "Ab Nahid",
+    role: "Creative Director",
   },
 ];
 
@@ -84,7 +90,7 @@ const TestimonialSection = () => {
                         <p className="text-black-text-800 text-lg xl:text-xl font-bold font-Syne leading-7 mb-4">
                           “{t.text}”
                         </p>
-                        <h4 className="flex items-center gap-4 text-black-800 text-lg font-extrabold font-Syne">
+                        <div className="flex place-items-baseline gap-4">
                           <svg
                             width="48"
                             height="2"
@@ -98,8 +104,13 @@ const TestimonialSection = () => {
                               strokeOpacity="0.4"
                             />
                           </svg>
-                          {t.author}
-                        </h4>
+                          <h4 className="flex flex-col  text-black-800 text-lg font-extrabold font-Syne ">
+                            {t.author}
+                            <span className="text-black-800 text-lg font-extrabold font-Syne">
+                              {t.role}
+                            </span>
+                          </h4>
+                        </div>
                       </div>
                     ))}
                   </div>

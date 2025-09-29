@@ -53,7 +53,7 @@ const AboutSection = () => {
               Based in Worldwide
             </h4>
             <p className="paragraph mb-6">
-              Collaboratively leverage front-end editing techniques to enhance
+              Collaboratively leverage front end editing techniques to enhance
               visual storytelling, without requiring deep technical expertise.
               Continuously adapt and repurpose diverse content platforms to
               maximize creative impact.
@@ -67,7 +67,7 @@ const AboutSection = () => {
               </li>
               <li>
                 <span className="text-black-800 text-[32px] font-bold font-Syne leading-10 relative before:rounded-full before:bg-black-300 before:block before:absolute before:top-[0px] before:left-0 before:right-0 before:-z-[1] before:w-[43px] before:h-[43px]">
-                  40+
+                  1000+
                 </span>
                 <p className="paragraph">Projects Completed</p>
               </li>
@@ -80,10 +80,12 @@ const AboutSection = () => {
             </ul>
             <div className="flex flex-wrap">
               <Link
-                href="https://www.canva.com/design/DAGqy5B4gHI/2zV_dr8mKFayohREnxku8Q/view?utm_content=DAGqy5B4gHI&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h9efbc2cb12"
+                href="https://docs.google.com/document/d/17NgOt4tfVWLgzIdsmgfy7XOG0kRcHSV5bIDchqyFeZc/edit?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center flex-wrap btn-primary group"
               >
-                Download my resume
+                my resume
                 <span className="inline-block ml-3 group-hover:animate-move-up">
                   <ArrowUpRight />
                 </span>

@@ -1,8 +1,11 @@
 "use client";
 
+import type { Transition } from "framer-motion";
+import { AnimatePresence, motion, MotionConfig } from "framer-motion";
+import { XIcon } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
-import { HeroVideoDialog } from "../ui/HeroVideoDialog";
+import { useEffect, useId, useState } from "react";
 
 interface Highlight {
   _id: string;
@@ -11,9 +14,15 @@ interface Highlight {
   videoUrl: string;
 }
 
+const transition: Transition = {
+  type: "spring",
+  duration: 0.4,
+};
+
 const Portfolio = () => {
   const [highlights, setHighlights] = useState<Highlight[]>([]);
   const [activeVideo, setActiveVideo] = useState<string | null>(null);
+  const uniqueId = useId();
 
   // Fetch highlights from your API
   useEffect(() => {
@@ -30,8 +39,18 @@ const Portfolio = () => {
     fetchHighlights();
   }, []);
 
+  function getEmbedId(embedUrl: string): string | null {
+    try {
+      const url = new URL(embedUrl);
+      return url.pathname.split("/")[2];
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unused-vars
+    } catch (e: any) {
+      return null;
+    }
+  }
+
   return (
-    <section className="bg-secondary py-[120px]">
+    <section className="bg-secondary py-[70px] lg:py-[120px]">
       <div className="max-w-7xl mx-auto px-4">
         <div className="grid grid-cols-12 gap-6">
           {/* Section Title */}
@@ -49,34 +68,47 @@ const Portfolio = () => {
           </div>
 
           {/* Dynamic Highlights */}
-          {highlights.map((highlight, index) => (
-            <div
-              key={highlight._id}
-              className="col-span-12 md:col-span-6"
-              data-aos="fade-up"
-              data-aos-delay={200 * (index + 1)}
-            >
-              {/* Click to open video modal */}
+          {Array.isArray(highlights) &&
+            highlights.map((highlight, index) => (
               <div
-                onClick={() => setActiveVideo(highlight.videoUrl)}
-                className="cursor-pointer rounded-2xl overflow-hidden border border-gray-200 shadow hover:shadow-lg transition"
+                key={highlight._id}
+                className="col-span-12 md:col-span-6"
+                data-aos="fade-up"
+                data-aos-delay={200 * (index + 1)}
               >
-                <div className="p-6">
-                  <h4 className="text-xl font-bold text-black-800">
-                    {highlight.title}
-                  </h4>
-                  <p className="text-sm text-gray-600 mt-2">{highlight.name}</p>
+                <div
+                  onClick={() => setActiveVideo(highlight.videoUrl)} // use embed URL in modal
+                  className="cursor-pointer rounded-2xl overflow-hidden border border-gray-300 shadow hover:shadow-lg transition"
+                >
+                  {/* Thumbnail image */}
+                  <Image
+                    src={`https://img.youtube.com/vi/${getEmbedId(
+                      highlight.videoUrl
+                    )}/hqdefault.jpg`}
+                    alt={highlight.title}
+                    width={636}
+                    height={480}
+                    className="w-full h-[210px] lg:h-[342px] object-cover  rounded-t-2xl"
+                  />
+
+                  <div className="p-6">
+                    <h4 className="text-xl font-bold text-black-800">
+                      {highlight.title}
+                    </h4>
+                    <p className="text-sm text-gray-600 mt-2">
+                      {highlight.name}
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
         </div>
 
         {/* View All Projects */}
-        <div className="col-span-12 mt-12" data-aos="fade-up">
+        <div className="col-span-12 mt-12">
           <div className="flex group">
             <Link
-              href="projects"
+              href="portfolio"
               className="flex items-center justify-center flex-wrap btn-primary grow"
             >
               View All Project
@@ -111,17 +143,51 @@ const Portfolio = () => {
         </div>
       </div>
 
-      {/* Video Modal (only opens for clicked video) */}
-      {activeVideo && (
-        <HeroVideoDialog
-          className="block dark:hidden max-w-7xl mx-auto px-4 rounded-2xl"
-          animationStyle="from-center"
-          videoSrc={activeVideo}
-          thumbnailSrc="/assets/Image/about-me.webp"
-          thumbnailAlt="Project Video"
-          onClose={() => setActiveVideo(null)}
-        />
-      )}
+      {/* Motion Modal */}
+      <MotionConfig transition={transition}>
+        <AnimatePresence>
+          {activeVideo && (
+            <>
+              {/* Backdrop */}
+              <motion.div
+                key={`backdrop-${uniqueId}`}
+                className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-md"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                onClick={() => setActiveVideo(null)}
+              />
+
+              {/* Modal */}
+              <motion.div
+                key="dialog"
+                className="fixed inset-0 flex items-center justify-center z-50"
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.95 }}
+              >
+                <div className="relative w-[90%] max-w-4xl aspect-video border-white border-2 rounded-2xl overflow-hidden shadow-lg">
+                  <iframe
+                    src={`${activeVideo}?autoplay=1&modestbranding=1&showinfo=0&rel=0`}
+                    title="YouTube video"
+                    className="w-full h-full"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  ></iframe>
+
+                  {/* Close button */}
+                  <button
+                    onClick={() => setActiveVideo(null)}
+                    className="absolute top-4 right-4 p-2 rounded-full bg-black/70 text-white hover:bg-black/90 transition"
+                  >
+                    <XIcon size={24} />
+                  </button>
+                </div>
+              </motion.div>
+            </>
+          )}
+        </AnimatePresence>
+      </MotionConfig>
     </section>
   );
 };

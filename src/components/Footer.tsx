@@ -97,7 +97,7 @@ const Footer: React.FC = () => {
             {/* Right Card */}
             <div className="py-6 sm:py-9 px-5 sm:px-7 border border-border-white rounded-2xl flex flex-col justify-between group bg-black-700/50 backdrop-blur-md">
               <h3 className="text-lg sm:text-xl font-bold font-Syne text-white mb-4 sm:mb-6">
-                Want a more in-depth look at my history?
+                Want a more in depth look at my history?
               </h3>
               <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 sm:gap-4">
                 <p className="text-lg sm:text-2xl font-bold font-Syne text-orange break-all">

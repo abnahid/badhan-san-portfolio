@@ -30,7 +30,7 @@ const pricingPlans: PricingPlan[] = [
     price: "$10/min",
     heading: "Full Production",
     description:
-      "Everything included: cinematic color grading, advanced motion graphics, sound design, multi-camera editing & subtitles.",
+      "Everything included: cinematic color grading, advanced motion graphics, sound design, multi camera editing & subtitles.",
     delay: 700,
   },
 ];

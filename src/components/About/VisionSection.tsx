@@ -17,7 +17,7 @@ const VisionSection: React.FC = () => {
               <p className="paragraph mb-7">
                 I believe every video has the potential to connect deeply with
                 an audience. My goal is to craft edits that capture emotions,
-                deliver impact, and keep viewers engaged — whether it’s a short
+                deliver impact, and keep viewers engaged whether it’s a short
                 social clip, a YouTube video, or a cinematic production.
               </p>
               <ul className="flex flex-wrap gap-9 2xl:gap-[40px]">
@@ -94,7 +94,7 @@ const VisionSection: React.FC = () => {
       <HeroVideoDialog
         className="block dark:hidden max-w-7xl mx-auto px-4 rounded-2xl"
         animationStyle="from-center"
-        videoSrc="https://www.youtube.com/embed/Bg37lGPpNjM?si=PNCzSwH-QOascG-b"
+        videoSrc="https://www.youtube.com/embed/FufIk50bLUU"
         thumbnailSrc="/assets/Image/about-me.webp"
         thumbnailAlt="Fresh Motion Graphics Project | Badhan Sen"
       />

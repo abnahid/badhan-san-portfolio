@@ -87,10 +87,10 @@ const Navbar: React.FC = () => {
               </span>
             </Link>
             <Link
-              href="/contact"
-              className="flex items-center flex-wrap py-[6px] px-3 text-[15px] font-bold text-active leading-none mr-2 transition-all duration-300 hover:text-orange md:hover:text-white group"
+              href="https://calendly.com/badhansencontact/30min"
+              className="flex items-center flex-wrap py-[6px] px-3 text-[15px] font-bold text-active leading-none mr-2 transition-all duration-300 hover:text-orange  group"
             >
-              Let’s Talk
+              Let&apos;s Talk
               <span className="inline-block ml-3 group-hover:animate-move-up">
                 <svg
                   width="24"

@@ -1,13 +1,87 @@
 "use client";
 
-import { ArrowUpRight, Facebook, Instagram, Twitter } from "lucide-react";
+import {
+  ArrowUpRight,
+  Facebook,
+  Instagram,
+  Twitter,
+  Youtube,
+} from "lucide-react";
+import { TbBrandFiverr } from "react-icons/tb";
+
 import Image from "next/image";
 import Link from "next/link";
 
+export const socials = [
+  {
+    name: "LinkedIn",
+    href: "https://www.linkedin.com/in/badhansen",
+    icon: (
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M6.94 5c0 .53-.21 1.04-.59 1.41A1.98 1.98 0 0 1 4.94 7a1.98 1.98 0 0 1-1.41-.59A1.98 1.98 0 0 1 2.94 5c0-.53.21-1.04.59-1.41A1.98 1.98 0 0 1 4.94 3c.53 0 1.04.21 1.41.59.38.37.59.88.59 1.41zM7 8.48H3V21h4V8.48zm6.32 0h-3.98V21h3.94v-6.57c0-3.66 4.77-4.01 4.77 0V21H22v-7.93c0-6.17-7.06-5.94-8.68-2.91V8.48z"
+          fill="currentColor"
+          fillOpacity="0.9"
+        />
+      </svg>
+    ),
+  },
+  {
+    name: "Instagram",
+    href: "https://www.instagram.com/badhansen.info",
+    icon: <Instagram />,
+  },
+  {
+    name: "Twitter",
+    href: "https://x.com/badhansen_info",
+    icon: <Twitter />,
+  },
+  {
+    name: "Facebook",
+    href: "https://www.facebook.com/badhansen.info",
+    icon: <Facebook />,
+  },
+  {
+    name: "youtube",
+    href: "https://www.fiverr.com/badhansen",
+    icon: <Youtube />,
+  },
+  {
+    name: "Upwork",
+    href: "https://www.upwork.com/freelancers/~01fbcf69a2d60720ae?mp_source=share",
+    icon: (
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        role="img"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <title>Upwork icon</title>
+        <path
+          d="M18.561 13.158c-1.102 0-2.135-.467-3.074-1.227l.228-1.076.008-.042c.207-1.143.849-3.06 2.839-3.06 1.492 0 2.703 1.212 2.703 2.703-.001 1.489-1.212 2.702-2.704 2.702zm0-8.14c-2.539 0-4.51 1.649-5.31 4.366-1.22-1.834-2.148-4.036-2.687-5.892H7.828v7.112c-.002 1.406-1.141 2.546-2.547 2.548-1.405-.002-2.543-1.143-2.545-2.548V3.492H0v7.112c0 2.914 2.37 5.303 5.281 5.303 2.913 0 5.283-2.389 5.283-5.303v-1.19c.529 1.107 1.182 2.229 1.974 3.221l-1.673 7.873h2.797l1.213-5.71c1.063.679 2.285 1.109 3.686 1.109 3 0 5.439-2.452 5.439-5.45 0-3-2.439-5.439-5.439-5.439z"
+          fill="currentColor"
+        />
+      </svg>
+    ),
+  },
+  {
+    name: "Fiverr",
+    href: "https://www.fiverr.com/badhansen",
+    icon: <TbBrandFiverr />,
+  },
+];
+
 export default function HeroSection() {
   return (
-    <section className="bg-secondary pt-[140px] pb-[125px]">
-      <div className="max-w-7xl mx-auto px-4 flex flex-col-reverse md:flex-row items-center">
+    <section className="bg-secondary pt-[140px] pb-[60px] md:pb-[100px]">
+      <div className="max-w-7xl mx-auto px-4 flex flex-col-reverse md:flex-row items-center gap-6">
         <div className="w-full md:w-1/2 xl:pt-1">
           <div className="xl:pt-12">
             <span
@@ -89,7 +163,7 @@ export default function HeroSection() {
             <div
               className="flex flex-wrap items-center"
               data-aos="fade-right"
-              data-aos-delay="1400"
+              data-aos-delay="800"
             >
               <div className="flex flex-wrap items-center">
                 <span className="font-Syne text-black-800 font-bold text-[44px] leading-none">
@@ -112,70 +186,17 @@ export default function HeroSection() {
               </div>
               <div className="mt-5 sm:mt-0">
                 <ul className="flex flex-wrap gap-x-4 items-center">
-                  <li>
-                    <Link
-                      href="https://www.linkedin.com/in/badhansen"
-                      className="text-black-800 hover:text-orange"
-                    >
-                      <svg
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
+                  {socials.map((social) => (
+                    <li key={social.name}>
+                      <Link
+                        href={social.href}
+                        target="_blank"
+                        className="text-black-800 hover:text-orange text-2xl"
                       >
-                        <path
-                          d="M6.94043 5.00002C6.94017 5.53046 6.7292 6.03906 6.35394 6.41394C5.97868 6.78883 5.46986 6.99929 4.93943 6.99902C4.409 6.99876 3.90039 6.78779 3.52551 6.41253C3.15062 6.03727 2.94016 5.52846 2.94043 4.99802C2.9407 4.46759 3.15166 3.95899 3.52692 3.5841C3.90218 3.20922 4.411 2.99876 4.94143 2.99902C5.47186 2.99929 5.98047 3.21026 6.35535 3.58552C6.73024 3.96078 6.9407 4.46959 6.94043 5.00002ZM7.00043 8.48002H3.00043V21H7.00043V8.48002ZM13.3204 8.48002H9.34043V21H13.2804V14.43C13.2804 10.77 18.0504 10.43 18.0504 14.43V21H22.0004V13.07C22.0004 6.90002 14.9404 7.13002 13.2804 10.16L13.3204 8.48002Z"
-                          fill="currentColor"
-                          fillOpacity="0.9"
-                        ></path>
-                      </svg>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="https://www.instagram.com/badhansen.info"
-                      className="text-black-800 hover:text-orange"
-                    >
-                      <Instagram />
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="https://www.upwork.com/freelancers/~01fbcf69a2d60720ae?mp_source=share"
-                      className="text-black-800 hover:text-orange"
-                    >
-                      <svg
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        role="img"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <title>Upwork icon</title>
-                        <path
-                          d="M18.561 13.158c-1.102 0-2.135-.467-3.074-1.227l.228-1.076.008-.042c.207-1.143.849-3.06 2.839-3.06 1.492 0 2.703 1.212 2.703 2.703-.001 1.489-1.212 2.702-2.704 2.702zm0-8.14c-2.539 0-4.51 1.649-5.31 4.366-1.22-1.834-2.148-4.036-2.687-5.892H7.828v7.112c-.002 1.406-1.141 2.546-2.547 2.548-1.405-.002-2.543-1.143-2.545-2.548V3.492H0v7.112c0 2.914 2.37 5.303 5.281 5.303 2.913 0 5.283-2.389 5.283-5.303v-1.19c.529 1.107 1.182 2.229 1.974 3.221l-1.673 7.873h2.797l1.213-5.71c1.063.679 2.285 1.109 3.686 1.109 3 0 5.439-2.452 5.439-5.45 0-3-2.439-5.439-5.439-5.439z"
-                          fill="currentColor"
-                        />
-                      </svg>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="https://www.facebook.com/badhansen.info"
-                      className="text-black-800 hover:text-orange"
-                    >
-                      <Facebook />
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="https://x.com/badhansen_info"
-                      className="text-black-800 hover:text-orange"
-                    >
-                      <Twitter />
-                    </Link>
-                  </li>
+                        {social.icon}
+                      </Link>
+                    </li>
+                  ))}
                 </ul>
               </div>
             </div>

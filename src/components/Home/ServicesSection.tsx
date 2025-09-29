@@ -7,10 +7,16 @@ import { FiBarChart2, FiCamera, FiFilm, FiHeart, FiMic } from "react-icons/fi";
 export default function ServicesSection() {
   const services = [
     {
-      title: "Shorts & Reels",
+      title: "Reels & Shorts",
       icon: <FiFilm className="w-8 h-8 text-orange" />,
       delay: 500,
       link: "/projects/shorts-reels",
+    },
+    {
+      title: "Cashcow",
+      icon: <FaVideo className="w-8 h-8 text-orange" />,
+      delay: 900,
+      link: "/projects/cashcow",
     },
     {
       title: "Documentary",
@@ -18,23 +24,18 @@ export default function ServicesSection() {
       delay: 700,
       link: "/projects/documentary",
     },
+
     {
-      title: "YouTube Video",
-      icon: <FaVideo className="w-8 h-8 text-orange" />,
-      delay: 900,
-      link: "/projects/youtube-video",
-    },
-    {
-      title: "Wedding Video",
+      title: "Talking Head",
       icon: <FiHeart className="w-8 h-8 text-orange" />,
       delay: 500,
-      link: "/projects/wedding-video",
+      link: "/projects/talking-head",
     },
     {
-      title: "Podcast & Interview",
+      title: "Other",
       icon: <FiMic className="w-8 h-8 text-orange" />,
       delay: 700,
-      link: "/projects/podcast-interview",
+      link: "/projects/other",
     },
     {
       title: "Commercial Video",
@@ -45,7 +46,7 @@ export default function ServicesSection() {
   ];
 
   return (
-    <section className="py-[120px]">
+    <section className="py-[60px] lg:py-[90px]">
       <div className="max-w-7xl mx-auto px-4">
         <div
           className="grid grid-cols-12 gap-6 2xl:gap-0 mb-12 items-center"
@@ -61,7 +62,7 @@ export default function ServicesSection() {
           </div>
           <div className="col-span-12 lg:col-span-6 xl:col-span-6">
             <p className="paragraph">
-              Synergistically seize front-end methods of empowerment without
+              Synergistically seize front end methods of empowerment without
               extensive core competencies. Progressively repurpose alternative
               platforms
             </p>

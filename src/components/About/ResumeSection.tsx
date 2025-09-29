@@ -21,7 +21,7 @@ interface AboutMe {
   email: string;
   experience: string;
   freelance: string;
-  skype: string;
+  discord: string;
   language: string;
   bio: string[];
   image: string;
@@ -76,7 +76,7 @@ const resumeData: ResumeData = {
     location: "Worldwide",
     bio: [
       "I’m Badhan Sen, a professional Video Editor based worldwide.",
-      "My passion lies in creating visuals that bring stories to life — editing content that not only showcases who you are but connects with your audience on an emotional level.",
+      "My passion lies in creating visuals that bring stories to life  editing content that not only showcases who you are but connects with your audience on an emotional level.",
     ],
   },
   experiences: [
@@ -94,9 +94,24 @@ const resumeData: ResumeData = {
   ],
   education: [
     {
-      date: "2015 – 2018",
-      school: "Dhaka University",
-      degree: "BA in Media & Communication",
+      date: "2021 – 2023",
+      school: "Sylhet Science and Technology College",
+      degree: "Higher Secondary Certificate (HSC)",
+    },
+    {
+      date: "2024",
+      school: "Mexemy",
+      degree: "Video Editing & Storytelling",
+    },
+    {
+      date: "2024",
+      school: "Mexemy",
+      degree: "Shorts Editing Mastery",
+    },
+    {
+      date: "2025",
+      school: "Alpha Motion Picture",
+      degree: "Editing Blueprint",
     },
   ],
   skills: [
@@ -132,6 +147,11 @@ const resumeData: ResumeData = {
     },
   ],
   awards: [
+    {
+      year: "2024",
+      icon: "/assets/Image/awards/mexemy.png",
+      title: "Mexemy Certified Creative Video Editor",
+    },
     {
       year: "2023",
       icon: "/assets/Image/awards/fwa.png",
