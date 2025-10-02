@@ -2,18 +2,18 @@ import Link from "next/link";
 
 const PortfolioSection = () => {
   const services = [
-    { title: "Shorts & Reels", link: "/projects/shorts-reels", delay: 500 },
-    { title: "Documentary", link: "/projects/documentary", delay: 700 },
-    { title: "YouTube Video", link: "/projects/youtube-video", delay: 900 },
-    { title: "Wedding Video", link: "/projects/wedding-video", delay: 1100 },
+    { title: "Reels & Shorts", link: "/portfolio/shorts-reels", delay: 500 },
+    { title: "Talking Head", link: "/portfolio/talking-head", delay: 900 },
+    { title: "Cashcow", link: "/portfolio/cashcow", delay: 1100 },
+    { title: "Documentary", link: "/portfolio/documentary", delay: 700 },
     {
-      title: "Podcast & Interview",
-      link: "/projects/podcast-interview",
+      title: "3D Visuals",
+      link: "/portfolio/3d-visuals",
       delay: 1300,
     },
     {
-      title: "Commercial Video",
-      link: "/projects/commercial-video",
+      title: "Other",
+      link: "/portfolio/other",
       delay: 1500,
     },
   ];

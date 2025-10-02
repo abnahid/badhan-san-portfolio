@@ -31,19 +31,18 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         icon: House as React.ComponentType<any>,
         active: pathname === "/dashboard",
       },
+      {
+        title: "All Categories",
+        url: "/dashboard/all-categories",
+        icon: RiGlobalLine as React.ComponentType<any>,
+        active: pathname.startsWith("/dashboard/all-categories"),
+      },
 
       {
         title: "Add Project",
         url: "/dashboard/add-project",
         icon: RiGlobalLine as React.ComponentType<any>,
         active: pathname.startsWith("/dashboard/add-project"),
-      },
-
-      {
-        title: "All Categories",
-        url: "/dashboard/categories",
-        icon: RiGlobalLine as React.ComponentType<any>,
-        active: pathname.startsWith("/dashboard/categories"),
       },
     ],
   };

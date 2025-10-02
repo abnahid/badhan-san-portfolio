@@ -1,5 +1,6 @@
 "use client";
 import { Facebook, Instagram, Twitter } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 
@@ -82,9 +83,17 @@ const Navbar: React.FC = () => {
           {/* Main bar */}
           <div className="flex-1 flex items-center justify-between border-b border-black-800/40 bg-transparent">
             <Link href="/">
-              <span className="text-[20px] font-bold font-Syne text-active">
-                Badhan Sen
-              </span>
+              <div className="flex items-center flex-wrap gap-2 cursor-pointer">
+                <Image
+                  src="/assets/Image/logo.png"
+                  alt="Logo"
+                  width={40}
+                  height={40}
+                />
+                <span className="text-[24px] font-bold font-Syne text-active">
+                  Badhan Sen
+                </span>
+              </div>
             </Link>
             <Link
               href="https://calendly.com/badhansencontact/30min"

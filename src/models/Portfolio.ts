@@ -1,6 +1,7 @@
 import { Schema, model, models } from "mongoose";
 
 const PortfolioSchema = new Schema({
+  slug: { type: String, required: true },
   categoryId: { type: String, required: true },
   categoryName: { type: String, required: true },
   title: { type: String, required: true },

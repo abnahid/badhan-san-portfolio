@@ -1,6 +1,12 @@
 import Portfolio from "@/models/Portfolio";
 import { connectDB } from "./mongodb";
 
+export async function getAllPortfolioSlugs() {
+  await connectDB();
+  const slugs = await Portfolio.distinct("slug");
+  return slugs;
+}
+
 export async function getPortfolios() {
   await connectDB();
   return await Portfolio.find().lean();
@@ -11,12 +17,18 @@ export async function getPortfoliosByCategory(categoryName: string) {
   return await Portfolio.find({ categoryName }).lean();
 }
 
+export async function getPortfolioBySlug(slug: string) {
+  await connectDB();
+  return await Portfolio.find({ slug }).lean();
+}
+
 export async function addPortfolio(data: {
   categoryId: string;
   categoryName: string;
   title: string;
   videoUrl: string;
   alt?: string;
+  slug: string;
 }) {
   await connectDB();
   const newPortfolio = new Portfolio(data);
@@ -31,6 +43,7 @@ export async function updatePortfolio(
     title: string;
     videoUrl: string;
     alt: string;
+    slug: string;
   }>
 ) {
   await connectDB();

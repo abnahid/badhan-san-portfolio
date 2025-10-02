@@ -149,7 +149,7 @@ export default function HeroSection() {
 
               <span data-aos="fade-right" data-aos-delay="1200">
                 <Link
-                  href="projects"
+                  href="portfolio"
                   className="flex items-center flex-wrap group btn-primary-outline"
                 >
                   My Work
@@ -205,19 +205,19 @@ export default function HeroSection() {
 
         {/* Hero Image and Rotating SVG - Show only on md+ screens */}
         <div className="w-full md:w-1/2 flex flex-col items-center md:items-end relative mb-12 md:mb-0">
-          <div className="w-[70vw] max-w-[350px] sm:max-w-[420px] md:max-w-[420px] lg:max-w-[650px] relative">
+          <div className="w-[70vw] max-w-[350px] sm:max-w-[420px] md:max-w-[420px] lg:max-w-[550px] relative">
             <Image
               className="w-full h-auto object-contain"
               data-aos="fade-left"
               src="/assets/Image/hero.png"
               alt="hero Image"
-              width={650}
+              width={550}
               height={800}
               priority
             />
             <Link href="/contact">
               <svg
-                className="absolute -bottom-10 right-0 lg:-bottom-6 lg:right-10 xl:right-24 w-[90px] h-[90px] lg:w-[180px] lg:h-[180px]"
+                className="absolute -bottom-10 right-15 lg:-bottom-6 lg:right-10 xl:right-24 w-[120px] h-[120px] lg:w-[180px] lg:h-[180px]"
                 width="180"
                 height="180"
                 viewBox="0 0 180 180"

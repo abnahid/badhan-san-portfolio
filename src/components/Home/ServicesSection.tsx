@@ -10,38 +10,37 @@ export default function ServicesSection() {
       title: "Reels & Shorts",
       icon: <FiFilm className="w-8 h-8 text-orange" />,
       delay: 500,
-      link: "/projects/shorts-reels",
+      link: "/portfolio/shorts-reels",
+    },
+    {
+      title: "Talking Head",
+      icon: <FiHeart className="w-8 h-8 text-orange" />,
+      delay: 700,
+      link: "/portfolio/talking-head",
     },
     {
       title: "Cashcow",
       icon: <FaVideo className="w-8 h-8 text-orange" />,
       delay: 900,
-      link: "/projects/cashcow",
+      link: "/portfolio/cashcow",
     },
     {
       title: "Documentary",
       icon: <FiCamera className="w-8 h-8 text-orange" />,
-      delay: 700,
-      link: "/projects/documentary",
-    },
-
-    {
-      title: "Talking Head",
-      icon: <FiHeart className="w-8 h-8 text-orange" />,
       delay: 500,
-      link: "/projects/talking-head",
+      link: "/portfolio/documentary",
+    },
+    {
+      title: "3D Visuals",
+      icon: <FiBarChart2 className="w-8 h-8 text-orange" />,
+      delay: 700,
+      link: "/portfolio/3d-visuals",
     },
     {
       title: "Other",
       icon: <FiMic className="w-8 h-8 text-orange" />,
-      delay: 700,
-      link: "/projects/other",
-    },
-    {
-      title: "Commercial Video",
-      icon: <FiBarChart2 className="w-8 h-8 text-orange" />,
       delay: 900,
-      link: "/projects/commercial-video",
+      link: "/portfolio/other",
     },
   ];
 

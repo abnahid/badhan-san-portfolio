@@ -1,6 +1,11 @@
-"use client";
 import { Facebook, Instagram, Twitter } from "lucide-react";
 import React from "react";
+
+export const metadata = {
+  title: "Contact Me - Badhan San",
+  description:
+    "Get in touch with Badhan San for video editing, content creation, and collaboration opportunities. Reach out via email, phone, or social media to discuss your project needs and how I can help bring your vision to life.",
+};
 
 const socialLinks = [
   {

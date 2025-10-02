@@ -3,13 +3,14 @@
 import { useState } from "react";
 
 type FormProps = {
-  categories: { id: string; name: string }[];
+  categories: { id: string; name: string; slug: string }[];
 };
 
 export default function AddProjectForm({ categories }: FormProps) {
   const [form, setForm] = useState({
     categoryId: "",
     categoryName: "",
+    slug: "",
     title: "",
     videoUrl: "",
     alt: "",
@@ -21,16 +22,21 @@ export default function AddProjectForm({ categories }: FormProps) {
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => {
     const { name, value } = e.target;
-    setForm((prev) => ({
-      ...prev,
-      [name]: value,
-      ...(name === "categoryId"
-        ? {
-            categoryName:
-              categories.find((cat) => cat.id === value)?.name || "",
-          }
-        : {}),
-    }));
+    setForm((prev) => {
+      if (name === "categoryId") {
+        const cat = categories.find((cat) => cat.id === value);
+        return {
+          ...prev,
+          categoryId: value,
+          categoryName: cat?.name || "",
+          slug: cat?.slug || "",
+        };
+      }
+      return {
+        ...prev,
+        [name]: value,
+      };
+    });
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -73,6 +79,7 @@ export default function AddProjectForm({ categories }: FormProps) {
     setForm({
       categoryId: "",
       categoryName: "",
+      slug: "",
       title: "",
       videoUrl: "",
       alt: "",
