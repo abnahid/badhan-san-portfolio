@@ -16,6 +16,7 @@ import { useUser } from "@/context/UserContext";
 import { House } from "lucide-react";
 import { usePathname } from "next/navigation";
 import * as React from "react";
+import { MdOutlineAddToPhotos } from "react-icons/md";
 import { RiGlobalLine } from "react-icons/ri";
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
@@ -41,7 +42,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       {
         title: "Add Project",
         url: "/dashboard/add-project",
-        icon: RiGlobalLine as React.ComponentType<any>,
+        icon: MdOutlineAddToPhotos as React.ComponentType<any>,
         active: pathname.startsWith("/dashboard/add-project"),
       },
     ],

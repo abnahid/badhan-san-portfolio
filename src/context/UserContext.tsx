@@ -17,10 +17,10 @@ const UserContext = createContext<UserContextType | undefined>(undefined);
 
 export function UserProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState<User>({
-    name: "Ben Affleck",
-    email: "test@example.com",
-    avatar: "https://avatar.iran.liara.run/public/1",
-    role: "User",
+    name: "Badhan San",
+    email: "badhansenayoninfo@gmail.com",
+    avatar: "https://i.ibb.co.com/JjcT7cPz/avator-bd.webp",
+    role: "Admin",
   });
 
   return (

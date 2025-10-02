@@ -55,6 +55,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <meta name="msvalidate.01" content="EDB774340D02F44548EC738538CA1E21" />
+        <meta name="yandex-verification" content="17f79236efa3b02e" />
+      </head>
       <body
         className={`${dmSans.variable} ${syne.variable} antialiased font-dm-sans`}
       >

@@ -20,7 +20,7 @@ Disallow: /public/
 Disallow: *.json$
 
 # Sitemap location
-Sitemap: badhansen.info/sitemap.xml
+Sitemap: https://www.badhansen.info/sitemap.xml
 
 # Crawl delay (optional - helps prevent overwhelming the server)
 Crawl-delay: 1`;

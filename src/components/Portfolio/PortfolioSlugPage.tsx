@@ -77,7 +77,8 @@ const PortfolioSlugPage = () => {
       const url = new URL(embedUrl);
       return url.pathname.split("/")[2];
     } catch (e) {
-      return console.log("error" + e);
+      console.log("error" + e);
+      return null;
     }
   }
 

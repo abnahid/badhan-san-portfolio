@@ -9,8 +9,9 @@ export async function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
+  const { slug } = await params;
   const categoryTitles: { [key: string]: string } = {
     "shorts-reels": "Reels & Shorts",
     "talking-head": "Talking Head",
@@ -19,7 +20,7 @@ export async function generateMetadata({
     "3d-visuals": "3D Visuals",
     other: "Other",
   };
-  const categoryTitle = categoryTitles[params.slug] || params.slug;
+  const categoryTitle = categoryTitles[slug] || slug;
   return {
     title: `${categoryTitle} - Portfolio | Badhan San`,
     description: `Explore the ${categoryTitle} projects by Badhan San, showcasing expertise in video editing and content creation.`,
@@ -27,7 +28,7 @@ export async function generateMetadata({
 }
 
 const page = () => {
-  return <PortfolioSlugPage  />;
+  return <PortfolioSlugPage />;
 };
 
 export default page;

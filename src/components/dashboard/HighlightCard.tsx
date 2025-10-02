@@ -18,8 +18,20 @@ export function HighlightCard({ highlight, onUpdate }: any) {
     if (!highlight || !highlight._id) return;
     if (!confirm("Delete this highlight?")) return;
 
-    await fetch(`/api/highlights/${highlight._id}`, { method: "DELETE" });
-    onUpdate();
+    try {
+      const response = await fetch(`/api/highlights?id=${highlight._id}`, {
+        method: "DELETE",
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to delete highlight");
+      }
+
+      onUpdate();
+    } catch (error) {
+      console.error("Error deleting highlight:", error);
+      alert("Failed to delete highlight. Please try again.");
+    }
   };
 
   if (!highlight) {

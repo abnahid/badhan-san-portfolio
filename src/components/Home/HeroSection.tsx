@@ -1,13 +1,6 @@
 "use client";
 
-import {
-  ArrowUpRight,
-  Facebook,
-  Instagram,
-  Twitter,
-  Youtube,
-} from "lucide-react";
-import { TbBrandFiverr } from "react-icons/tb";
+import { ArrowUpRight, Instagram, Twitter, Youtube } from "lucide-react";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -42,14 +35,10 @@ export const socials = [
     href: "https://x.com/badhansen_info",
     icon: <Twitter />,
   },
-  {
-    name: "Facebook",
-    href: "https://www.facebook.com/badhansen.info",
-    icon: <Facebook />,
-  },
+
   {
     name: "youtube",
-    href: "https://www.fiverr.com/badhansen",
+    href: "https://www.youtube.com/@editscapes",
     icon: <Youtube />,
   },
   {
@@ -70,11 +59,6 @@ export const socials = [
         />
       </svg>
     ),
-  },
-  {
-    name: "Fiverr",
-    href: "https://www.fiverr.com/badhansen",
-    icon: <TbBrandFiverr />,
   },
 ];
 
@@ -209,7 +193,7 @@ export default function HeroSection() {
             <Image
               className="w-full h-auto object-contain"
               data-aos="fade-left"
-              src="/assets/Image/hero.png"
+              src="/assets/Image/hero.webp"
               alt="hero Image"
               width={550}
               height={800}

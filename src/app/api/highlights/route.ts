@@ -9,7 +9,9 @@ import { NextResponse } from "next/server";
 export async function GET() {
   try {
     const highlights = await getHighlights();
-    return NextResponse.json(highlights.slice(0, 2), { status: 200 });
+    // Filter out any null/undefined values and ensure valid data
+    const validHighlights = highlights.filter((h) => h && h._id).slice(0, 2);
+    return NextResponse.json(validHighlights, { status: 200 });
   } catch (err) {
     console.error("GET /api/highlights error:", err);
     return NextResponse.json(

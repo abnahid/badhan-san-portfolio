@@ -7,7 +7,7 @@ export async function GET(
   { params }: { params: Promise<{ slug: string[] }> }
 ) {
   try {
-    const { slug } = params;
+    const { slug } = await params;
     await connectDB();
     const data = await Portfolio.find({ slug: slug[0] });
     // const data = await getPortfolioBySlug(slug);
